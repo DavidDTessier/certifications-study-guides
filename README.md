@@ -14,9 +14,9 @@ This repository contains study materials and preparation guides for multiple IT 
   - [Cloud Security Engineer (2024)](GCP%20Certifications/Security%20Engineer/README.md) — Updated security engineer guide covering identity & access management, workforce identity federation, managed AD, data protection and security operations.
   - [Professional Cloud Network Engineer](GCP%20Certifications/Network%20Engineer/README.md) — Network engineer guide covering VPCs, DNS & hybrid DNS options, load balancing, connectivity (Interconnect/VPN), and network security best practices.
 
-- [IBM HashiCorp Certifications](IBM%20Hashicorp%20%Certifications/README.md) — Landing page for HashiCorp/Terraform certification materials.
-  - [Terraform Associate — Prep Guide](IBM%20Hashicorp%20%Certifications/IBM%20Hashicorp%20Terraform%20Associate/README.md) — Exam domains, Terraform fundamentals, workflow, modules, state, and a cheat sheet.
-  - [Terraform Stacks Sample — AWS Infrastructure Tutorial](IBM%20Hashicorp%20%Certifications/IBM%20Hashicorp%20Terraform%20Associate/tutorials/021-stacks-sample/README.md) — Example Terraform Stacks project that deploys a multi-AZ AWS infrastructure with VPC, ALB, and EC2 web servers.
+- [IBM HashiCorp Certifications](IBM%20Hashicorp%20Certifications/README.md) — Landing page for HashiCorp/Terraform certification materials.
+  - [Terraform Associate — Prep Guide](IBM%20Hashicorp%20Certifications/IBM%20Hashicorp%20Terraform%20Associate/README.md) — Exam domains, Terraform fundamentals, workflow, modules, state, and a cheat sheet.
+  - [Terraform Stacks Sample — AWS Infrastructure Tutorial](IBM%20Hashicorp%20Certifications/IBM%20Hashicorp%20Terraform%20Associate/tutorials/021-stacks-sample/README.md) — Example Terraform Stacks project that deploys a multi-AZ AWS infrastructure with VPC, ALB, and EC2 web servers.
 
 ## How to use this index
 
