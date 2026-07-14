@@ -10,7 +10,7 @@ terraform {
     storage_account_name = "satfstatedevops20240329"
     container_name       = "tfstate"
     key                  = "bootstrp.terraform.tfstate"
-    access_key = "5Rk5uKo8Wy7XjvK0rDvAHHAtxRoij6p7U2ZH5BzoF3vadaUayow5INMF81mONeDwtC1O3bYAJjpX+ASta4Ukeg=="
+    access_key = "<REPLACE_ME>"
   }*/
 }
 
