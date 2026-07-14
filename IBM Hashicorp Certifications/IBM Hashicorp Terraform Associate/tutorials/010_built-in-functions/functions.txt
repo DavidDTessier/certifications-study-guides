@@ -1,0 +1,1337 @@
+# NUMERIC FUNCTIONS
+
+#abs - Returns the absolute value of a number: 
+> abs(10)
+10
+> abs(0)
+0
+> abs(-13.2)
+13.2
+..................................................
+
+ceil - Rounds a number up to the nearest integer
+
+> ceil(5.3)
+6
+
+.................................................
+
+floor - Rounds a number down to the nearest integer
+
+> floor(8.9)
+8
+....................................................
+
+log - Returns the natural logarithm of a number given a base
+
+> log(2.71828, 2)
+1.442694070456223
+
+..................................................
+
+max - Returns the maximum value from a list of numbers
+
+> max(14, 8, 23, 5, 19)
+23
+
+......................................................
+min - Returns the minimum value from a list of numbers
+
+>min(14, 8, 23, 5, 19)
+5
+
+......................................................
+parseint - Converts a given string to an integer for a given base
+
+>parseint("42", 10)
+42
+
+....................................................
+pow - Raises a number to a specified power
+
+>pow(2,3)
+8
+.....................................................
+
+signum - Returns the sign of a number (-1, 0, or 1)
+
+>signum(-7)
+-1
+....................................................
+
+STRING FUNCTIONS
+----------------
+
+chomp - Removes trailing newline characters from a string:
+
+>chomp("Hello\n")
+"Hello"
+
+........................................................
+
+endswith - Checks if a string ends with a specified substring
+
+>endswith("Terrform","form")
+true
+
+........................................................
+
+format - Formats a string based on a format specifier
+
+>format("Hello, %s!", "Terraform")
+"Hello, Terraform!"
+
+..............................................
+
+formatlist - Formats strings based on a format specifier and a list of values
+
+>formatlist("Hello, %s!", ["Alice", "Bob"])
+tolist([
+  "Hello, Alice!",
+  "Hello, Bob!",
+])
+
+................................................
+
+indent - Adds a multi-line string into an already-indented context in another string
+
+> " items: ${indent(2, "[\n foo, \n bar, \n]\n")}"
+<<EOT
+ items: [
+   foo, 
+   bar, 
+  ]
+  
+EOT
+
+..................................................
+
+join - Concatenates elements of a list into a single string
+
+> join(", ", ["apple", "orange", "banana"])
+"apple, orange, banana"
+
+...............................................
+
+lower - Converts a string to lowercase
+
+> lower("Hello")
+"hello"
+
+....................................................
+
+upper - Converts a string to uppercase
+
+> upper("world")
+"WORLD"
+
+...................................................
+
+regex - Performs regular expression matching and returns the first matching
+
+>regex("Terraform", "erra")
+"erra"
+
+...................................................
+
+regexall - Performs regular expression matching and returns all matches as a list
+
+> regexall("[a-z]+", "1234abcd567efgh9")
+tolist([
+  "abcd",
+  "efgh",
+])
+
+......................................................
+
+replace - Replaces occurrences of a substring with another substring
+
+> replace("Hello, Terraform!", "Terraform", "World")
+"Hello, World!"
+
+.......................................................
+
+split - Splits a string into a list based on a delimiter
+
+> split(", ", "apple, orange, banana")
+tolist([
+  "apple",
+  "orange",
+  "banana",
+])
+
+........................................................
+
+startswith - Checks if a string starts with a specified substring. The function returns true if condition is true
+
+>startswith("Terraform", "Terra)
+true
+
+.........................................................
+
+strcontains - Checks if a string contains a specified substring
+> strcontains("example","amp")
+true
+
+..........................................................
+
+strrev - Reverses a string
+
+>strrev("abcd")
+"dcba"
+
+.........................................................
+
+substr - Extracts a substring from a given string by offset and (max) length
+
+>substr("Terraform", 3, 5)
+"rafor"
+
+.........................................................
+title - Converts the first character of each word to uppercase
+
+>title("terraform is great")
+"Terraform Is Great"
+
+.........................................................
+
+trim - Removes leading and trailing whitespace from a string
+
+> trim(" footbar ", " ")
+"footbar"
+
+...........................................................
+
+trimprefix - Removes the specified set of characters from the start and end of a given string
+
+> trimprefix("Terraform", "T")
+"erraform"
+
+...........................................................
+
+trimsuffix - Removes a specified suffix from a string
+
+> trimsuffix("Terraform", "form")
+"Terra"
+
+...............................................
+
+COLLECTION FUNCTIONS
+----------------------
+
+alltrue - Returns true if all the elements within the provided collection evaluate to true or "true". 
+          Additionally, if the collection is empty, its also yields true.
+
+> alltrue([true, true, false])
+false
+
+..............................................................................
+
+anytrue - Returns true if any element within the provided collection evaluates to true or "True". It also returns false if the collection is empty
+
+> anytrue([false, false, true])
+true
+
+.............................................................................
+
+coalesce - Take any number of arguments and returns the first non-null or non-empty string among the elements
+
+> coalesce(null, "hi", "", null, "bye")
+
+...............................................................................
+
+coalescelist - Returns the first non-empty list from a list of lists
+
+> coalescelist([], [1,2], [], [3,4])
+[1,2]
+
+............................................................
+
+chunklist - Splits a list into chunks of a specified size
+
+> chunklist([1,2,3,4,5], 2)
+  tolist([
+    1,
+    2,
+  ]),
+  tolist([
+    3,
+    4,
+  ]),
+  tolist([
+    5,
+  ]),
+])
+
+.................................................
+
+compact - Removes null elements and empty string form a list
+> compact([1, null, 2, null, 3])
+tolist([
+  "1",
+  "2",
+  "3",
+])
+
+.................................................
+
+concat - Combines two or more lists into a single list
+
+> concat([1,2], [3,4])
+[1,2,3,4]
+
+...................................................
+
+contains - Checks if a list or given set contains a specified value
+
+> contains(["apple", "banana", "orange"], "banana")
+true
+
+.....................................................
+
+distinct - Removes duplicate elements from a list
+
+> distinct([1,2,2,3,3,3,4])
+tolist([1,2,3,4,])
+
+....................................................
+
+element - Returns the element at a specified index in a list
+
+> element(["apple", "orange", "banana"], 1)
+"orange"
+
+...................................................
+
+flatten - takes a list and replaces any elements that are lists with a flattened sequence of the list contents.
+
+> flatten([["a", "b"], [], ["c"]])
+["a", "b", "c"]
+
+.....................................................
+
+index - finds the element index for a given value in a list.
+
+> index(["a", "b", "c"], "b")
+1
+
+.......................................................
+
+keys - takes a map and returns a list containing the keys from that map.
+
+The keys are returned in lexicographical order, ensuring that the result will be identical as long as the keys in the map don't change.
+
+> keys({a=1, c=2, d=3})
+[
+  "a",
+  "c",
+  "d",
+]
+
+..........................................................
+
+length - determines the length of a given list, map, or string.
+
+If given a list or map, the result is the number of elements in that collection. If given a string, the result is the number of characters in the string.
+
+> length([])
+0
+> length(["a", "b"])
+2
+> length({"a" = "b"})
+1
+> length("hello")
+5
+
+.............................................................
+
+The list function is no longer available. Prior to Terraform v0.12 it was the only available syntax for writing a literal list inside an expression, 
+but Terraform v0.12 introduced a new first-class syntax.
+
+New Function 
+
+toList 
+tolist(["a","b","c","d",])
+
+..................................................................
+
+lookup - retrieves the value of a single element from a map, given its key. If the given key does not exist, the given default value is returned instead.
+
+> lookup({a="ay", b="bee"}, "a", "what?")
+ay
+> lookup({a="ay", b="bee"}, "c", "what?")
+what?
+
+.................................................................
+
+The map function is no longer available. Prior to Terraform v0.12 it was the only available syntax for writing a literal map inside an expression, but Terraform v0.12 introduced a new first-class syntax.
+
+To update an expression like map("a", "b", "c", "d"), write the following instead:
+
+tomap({
+  a = "b"
+  c = "d"
+})
+
+......................................................................
+
+matchkeys - constructs a new list by taking a subset of elements from one list whose indexes match the corresponding indexes of values in another list.
+
+> matchkeys(["i-123", "i-abc", "i-def"], ["us-west", "us-east", "us-east"], ["us-east"])
+tolist([
+  "i-abc",
+  "i-def",
+])
+
+......................................................................
+
+merge - takes an arbitrary number of maps or objects, and returns a single map or object that contains a merged set of elements from all arguments.
+
+If more than one given map or object defines the same key or attribute, then the one that is later in the argument sequence takes precedence. If the argument types do not match, the resulting type will be an object matching the type structure of the attributes after the merging rules have been applied.
+
+> merge({a="b", c="d"}, {e="f", c="z"})
+{
+  "a" = "b"
+  "c" = "z"
+  "e" = "f"
+}
+
+> merge({a="b"}, {a=[1,2], c="z"}, {d=3})
+{
+  "a" = [
+    1,
+    2,
+  ]
+  "c" = "z"
+  "d" = 3
+}
+
+....................................................................
+
+one takes a list, set, or tuple value with either zero or one elements. If the collection is empty, one returns null. Otherwise, one returns the first element. If there are two or more elements then one will return an error.
+
+This is a specialized function intended for the common situation where a conditional item is represented as either a zero- or one-element list, where a module author wishes to return a single value that might be null instead.
+
+> one([])
+null
+> one([1,1,2])
+╷
+│ Error: Invalid function argument
+│ 
+│   on <console-input> line 1:
+│   (source code not available)
+│ 
+│ Invalid value for "list" parameter: must be a list, set, or tuple value with either zero or one elements.
+╵
+> one([1])
+1
+
+....................................................................
+
+range - generates a list of numbers using a start value, a limit value, and a step value.
+
+> range(3)
+[
+  0,
+  1,
+  2,
+]
+
+> range(1, 4)
+[
+  1,
+  2,
+  3,
+]
+
+> range(1, 8, 2)
+[
+  1,
+  3,
+  5,
+  7,
+]
+
+> range(1, 4, 0.5)
+[
+  1,
+  1.5,
+  2,
+  2.5,
+  3,
+  3.5,
+]
+
+> range(4, 1)
+[
+  4,
+  3,
+  2,
+]
+
+> range(10, 5, -2)
+[
+  10,
+  8,
+  6,
+]
+
+............................................................................
+
+reverse - takes a sequence and produces a new sequence of the same length with all of the same elements as the given sequence but in reverse order.
+
+> reverse([1, 2, 3])
+[
+  3,
+  2,
+  1,
+]
+
+..............................................................................
+
+setintersection -  takes multiple sets and produces a single set containing only the elements that all of the given sets have in common. In other words, it computes the intersection of the sets.
+
+> setintersection(["a", "b"], ["b", "c"], ["b", "d"])
+[
+  "b",
+]
+
+................................................................................
+
+setproduct - finds all of the possible combinations of elements from all of the given sets by computing the Cartesian product.
+
+> setproduct(["development", "staging", "production"], ["app1", "app2"])
+[
+  [
+    "development",
+    "app1",
+  ],
+  [
+    "development",
+    "app2",
+  ],
+  [
+    "staging",
+    "app1",
+  ],
+  [
+    "staging",
+    "app2",
+  ],
+  [
+    "production",
+    "app1",
+  ],
+  [
+    "production",
+    "app2",
+  ],
+]
+
+....................................................................................
+
+setsubtract  - returns a new set containing the elements from the first set that are not present in the second set. In other words, it computes the relative complement of the second set.
+
+> setsubtract(["a", "b", "c"], ["a", "c"])
+toset([
+  "b",
+])
+
+..................................................................................
+
+setunion - function takes multiple sets and produces a single set containing the elements from all of the given sets. In other words, it computes the union of the sets.
+
+> setunion(["a", "b"], ["b", "c"], ["d"])
+[
+  "d",
+  "b",
+  "c",
+  "a",
+]
+
+.....................................................................................
+
+slice - extracts some consecutive elements from within a list.
+
+> slice(["a", "b", "c", "d"], 1, 3)
+[
+  "b",
+  "c",
+]
+
+....................................................................................
+
+sort - takes a list of strings and returns a new list with those strings sorted lexicographically.
+
+sort - is in terms of Unicode codepoints, with higher codepoints appearing after lower ones in the result.
+
+> sort(["e", "d", "a", "x"])
+[
+  "a",
+  "d",
+  "e",
+  "x",
+]
+.......................................................................................
+
+sum - takes a list or set of numbers and returns the sum of those numbers.
+
+sum  - fails when given an empty list or set.
+
+> sum([10, 13, 6, 4.5])
+33.5
+
+.........................................................................................
+
+transpose - takes a map of lists of strings and swaps the keys and values to produce a new map of lists of strings.
+
+> transpose({"a" = ["1", "2"], "b" = ["2", "3"]})
+{
+  "1" = [
+    "a",
+  ],
+  "2" = [
+    "a",
+    "b",
+  ],
+  "3" = [
+    "b",
+  ],
+}
+
+.........................................................................................
+
+values - takes a map and returns a list containing the values of the elements in that map.
+
+The values are returned in lexicographical order by their corresponding keys, so the values will be returned in the same order as their keys would be returned from keys.
+
+> values({a=3, c=2, d=1})
+[
+  3,
+  2,
+  1,
+]
+
+.......................................................................................
+
+zipmap constructs a map from a list of keys and a corresponding list of values, zipmap(keylist, valueslist)
+Both {keyslist} and {valueslist} must be of the same length. 
+{keyslist} must be a list of strings, while {valueslist} can be a list of any type.
+
+> zipmap(["a", "b"], [1, 2])
+{
+  "a" = 1
+  "b" = 2
+}
+
+.......................................................................................
+
+ENCODING FUNCTIONS
+------------------
+
+base64decode - takes a string containing a Base64 character sequence and returns the original string.
+
+base64decode is, in effect, a shorthand for calling textdecodebase64 with the encoding name set to UTF-8.
+
+Terraform uses the "standard" Base64 alphabet as defined in RFC 4648 section 4.
+
+> base64decode("SGVsbG8gV29ybGQ=")
+Hello World
+
+.....................................................................................
+
+base64encode - applies Base64 encoding to a string
+
+> base64encode("Hello World")
+SGVsbG8gV29ybGQ=
+
+......................................................................................
+
+base64gzip - compresses a string with gzip and then encodes the result in Base64 encoding
+
+base64gzip("hello world")
+"H4sIAAAAAAAA/8pIzcnJVyjPL8pJAQAAAP//AQAA//+FEUoNCwAAAA=="
+
+..................................................................................
+
+csvdecode - decodes a string containing CSV-formatted data and produces a list of maps representing that data
+
+> csvdecode("a,b,c\n1,2,3\n4,5,6")
+[
+  {
+    "a" = "1"
+    "b" = "2"
+    "c" = "3"
+  },
+  {
+    "a" = "4"
+    "b" = "5"
+    "c" = "6"
+  }
+]
+
+....................................................................................
+
+jsondecode - interprets a given string as JSON, returing a representation of the result of decoding that string
+
+JSON encoding is defined in RFC 7159
+
+> jsondecode("{\"hello\": \"world\"}")
+{
+  "hello" = "world"
+}
+> jsondecode("true")
+true
+...................................................................................
+
+jsonecode - encodes a give value to string using JSON syntax
+
+JSON encoding is defined in RFC 7159
+
+When encoding strings, this function escapes some characters using Unicode escape sequences: 
+    * replacing <, >, &, U+2028, and U+2029 with \u003c, \u003e, \u0026, \u2028, and \u2029. 
+This is to preserve compatibility with Terraform 0.11 behavior.
+
+The jsonencode command outputs a minified representation of the input.
+
+> jsonencode({"hello"="world"})
+{"hello":"world"}
+
+.......................................................................................
+
+textdecodebase64 - decodes a string that was previously Base64-encoded, and then interprets the result as characters in a specified character encoding.
+
+> textdecodebase64("SABlAGwAbABvACAAVwBvAHIAbABkAA==", "UTF-16LE")
+Hello World
+
+.............................................................................
+
+textencodebase64 - encodes the unicode characters in a given string using a specified character encoding, returning the result base64 encoded because Terraform language strings are always sequences of unicode characters.
+
+> textencodebase64("Hello World", "UTF-16LE")
+SABlAGwAbABvACAAVwBvAHIAbABkAA==
+
+.............................................................................
+
+urlencode - applies URL encoding to a given string
+
+> urlencode("Hello World!")
+Hello+World%21
+> urlencode("☃")
+%E2%98%83
+> "http://example.com/search?q=${urlencode("terraform urlencode")}"
+http://example.com/search?q=terraform+urlencode
+
+..........................................................................
+
+yamldecode - parses a string as a subset of YAML, and produces a representation of its value.
+
+This function supports a subset of YAML 1.2 
+
+> yamldecode("hello: world")
+{
+  "hello" = "world"
+}
+
+> yamldecode("true")
+true
+
+> yamldecode("{a: &foo [1, 2, 3], b: *foo}")
+{
+  "a" = [
+    1,
+    2,
+    3,
+  ]
+  "b" = [
+    1,
+    2,
+    3,
+  ]
+}
+
+> yamldecode("{a: &foo [1, *foo, 3]}")
+
+Error: Error in function call
+
+Call to function "yamldecode" failed: cannot refer to anchor "foo" from inside
+its own definition.
+
+> yamldecode("{a: !not-supported foo}")
+
+Error: Error in function call
+
+Call to function "yamldecode" failed: unsupported tag "!not-supported".
+
+......................................................................................
+
+yamlencode - encodes a given value to string using YAML 1.2 block syntax
+
+> yamlencode({"a":"b", "c":"d"})
+"a": "b"
+"c": "d"
+
+> yamlencode({"foo":[1, 2, 3], "bar": "baz"})
+"bar": "baz"
+"foo":
+- 1
+- 2
+- 3
+
+> yamlencode({"foo":[1, {"a":"b","c":"d"}, 3], "bar": "baz"})
+"bar": "baz"
+"foo":
+- 1
+- "a": "b"
+  "c": "d"
+- 3
+
+.................................................................................
+
+FILESYSTEM FUNCTIONS
+--------------------
+
+abspath - takes a string containing a filesystem path and converts it to an absolute path. That is, if the path is not absolute, it will be joined with the current working directory.
+
+> abspath(path.root)
+/home/user/some/terraform/root
+
+................................................................................
+
+dirname - takes a string containing a filesystem path and removes the last portion from it
+
+This function works only with the path string and does not access the filesystem itself. 
+It is therefore unable to take into account filesystem features such as symlinks.
+
+> dirname("foo/bar/baz.txt")
+foo/bar
+
+..................................................................................
+
+pathexpand - takes a filesystem path that might begin with a ~ segment, and if so it replaces that segment with the current user's home directory path.
+
+> pathexpand("~/.ssh/id_rsa")
+/home/steve/.ssh/id_rsa
+> pathexpand("/etc/resolv.conf")
+/etc/resolv.conf
+
+...............................................................................................
+
+basename - takes a string containing a filesystem path and removes all except the last portion from it.
+
+This function works only with the path string and does not access the filesystem itself. It is therefore unable to take into account filesystem features such as symlinks.
+
+> basename("foo/bar/baz.txt")
+baz.txt
+
+...............................................................................................
+
+file - reads the contents of a file at the given path and returns them as a string.
+
+> file("${path.module}/hello.txt")
+Hello World
+
+............................................................................................
+
+fileexists - determines whether a file exists at a given path.
+
+> fileexists("${path.module}/hello.txt")
+true
+
+..........................................................................................
+
+fileset - enumerates a set of regular file names given a path and pattern. 
+
+The path is automatically removed from the resulting set of file names and any result still 
+containing path separators always returns forward slash (/) as the path separator for 
+cross-system compatibility.
+
+> fileset(path.module, "files/*.txt")
+[
+  "files/hello.txt",
+  "files/world.txt",
+]
+
+> fileset(path.module, "files/{hello,world}.txt")
+[
+  "files/hello.txt",
+  "files/world.txt",
+]
+
+> fileset("${path.module}/files", "*")
+[
+  "hello.txt",
+  "world.txt",
+]
+
+> fileset("${path.module}/files", "**")
+[
+  "hello.txt",
+  "world.txt",
+  "subdirectory/anotherfile.txt",
+]
+
+....................................................................................
+
+filebase64 - reads the contents of a file at the given path and returns them as a base64-encoded string.
+
+The result is a Base64 representation of the raw bytes in the given file. 
+
+> filebase64("${path.module}/hello.txt")
+SGVsbG8gV29ybGQ=
+
+....................................................................................
+
+templatefile - reads the file at the given path and renders its content as a template using a supplied set of template variables.
+
+Given a template file "backend.tfpl" with the following content:
+%{ for addr in ip_addrs ~}
+backend ${addr}:${port}
+%{ endfor ~}
+
+> templatefile("${path.module}/backends.tftpl", { port = 8080, ip_addrs = ["10.0.0.1", "10.0.0.2"] })
+backend 10.0.0.1:8080
+backend 10.0.0.2:8080
+
+......................................................................
+
+
+DATE & TIME FUNCTIONS
+---------------------
+
+formatdate - converts a timestamp into a different time format
+
+> formatdate("DD MMM YYYY hh:mm ZZZ", "2018-01-02T23:12:01Z")
+02 Jan 2018 23:12 UTC
+> formatdate("EEEE, DD-MMM-YY hh:mm:ss ZZZ", "2018-01-02T23:12:01Z")
+Tuesday, 02-Jan-18 23:12:01 UTC
+> formatdate("EEE, DD MMM YYYY hh:mm:ss ZZZ", "2018-01-02T23:12:01-08:00")
+Tue, 02 Jan 2018 23:12:01 -0800
+> formatdate("MMM DD, YYYY", "2018-01-02T23:12:01Z")
+Jan 02, 2018
+> formatdate("HH:mmaa", "2018-01-02T23:12:01Z")
+11:12pm
+
+..........................................................
+
+**ONLY AVAILABLE IN Terraform v1.5+ ****
+
+plantimestamp - returns a UTC timestamp string in RFC 3339 format
+
+This function is not available within the Terraform console
+
+> plantimestamp()
+2018-05-13T07:44:12Z
+
+check "terraform_io_certificate" {
+  data "tls_certificate" "terraform_io" {
+    url = "https://www.terraform.io/"
+  }
+
+  assert {
+    condition = timecmp(plantimestamp(), data.tls_certificate.terraform_io.certificates[0].not_after) < 0
+    error_message = "terraform.io certificate has expired"
+  }
+}
+
+..................................................................
+
+timeadd - adds a duration to a timestamp, returning a new timestamp
+
+> timeadd("2017-11-22T00:00:00Z", "10m")
+2017-11-22T00:10:00Z
+
+.............................................................
+
+timecmp - compares two timestamps and returns a number that represents the ordering of the instants those timestamps represent.
+
+Condition	                                    Return Value
+timestamp_a is before timestamp_b	                -1
+timestamp_a is the same instant as timestamp_b	    0
+timestamp_a is after timestamp_b	                1
+
+> timecmp("2017-11-22T00:00:00Z", "2017-11-22T00:00:00Z")
+0
+> timecmp("2017-11-22T00:00:00Z", "2017-11-22T01:00:00Z")
+-1
+> timecmp("2017-11-22T01:00:00Z", "2017-11-22T00:00:00Z")
+1
+> timecmp("2017-11-22T01:00:00Z", "2017-11-22T00:00:00-01:00")
+0
+
+........................................................................
+
+timestamp - returns a UTC timestamp string in RFC 3339 format
+
+> timestamp()
+2018-05-13T07:44:12Z
+
+.....................................................................
+
+HASH & CRYPTO FUNCTIONS
+-----------------------
+
+base64sha256 - computes the SHA256 hash of a given string and encodes it with Base64. 
+               This is not equivalent to base64encode(sha256("test")) since sha256() returns hexadecimal representation.
+
+
+> base64sha256("hello world")
+uU0nuZNNPgilLlLX2n2r+sSE7+N6U4DukIj3rOLvzek=
+
+........................................................................................
+
+base64shar512 - computes the SHA512 hash of a given string and encodes it with Base64.
+                This is not equivalent to base64encode(sha512("test")) since sha512() returns
+                hexadecimal representation
+
+> base64sha512("hello world")
+MJ7MSJwS1utMxA9QyQLytNDtd+5RGnx6m808qG1M2G+YndNbxf9JlnDaNCVbRbDP2DDoH2Bdz33FVC6TrpzXbw==
+
+...............................................................................
+
+bcrypt - computes a hash of a given string using the Blowfish cipher, returing a string in
+         the modular crypt format (https://passlib.readthedocs.io/en/stable/modular_crypt_format.html)
+         usually expected in the shadow password file on many Unix systems
+
+format: bcrypt(string, cost)
+
+* cost - argument is option and will default to 10 if unspecified
+
+> bcrypt("hello world")
+$2a$10$D5grTTzcsqyvAeIAnY/mYOIqliCoG7eAMX0/oFcuD.iErkksEbcAa
+
+...............................................................................
+
+filebase64sha256 - is a variant of base64sha256 that hashes the contents of a given file rather than a literal string.
+
+This is similar to base64sha256(file(filename)), but because file accepts only UTF-8 text it cannot be used to create hashes for binary files.
+
+...........................................................................
+
+...............................................................................
+
+filebase64sha512 - is a variant of base64sha512 that hashes the contents of a given file rather than a literal string.
+
+This is similar to base64sha521(file(filename)), but because file accepts only UTF-8 text it cannot be used to create hashes for binary files.
+
+...........................................................................
+
+filemd5 -  a variant of md5 that hashes the contents of a given file rather than a literal string.
+
+This is similar to md5(file(filename)), but because file accepts only UTF-8 text it cannot be used to create hashes for binary files.
+
+......................................................................
+
+filesha1 - is a variant of sha1 that hashes the contents of a given file rather than a literal string.
+
+This is similar to sha1(file(filename)), but because file accepts only UTF-8 text it cannot be used to create hashes for binary files.
+
+....................................................................
+
+filesha256 is a variant of sha256 that hashes the contents of a given file rather than a literal string.
+
+This is similar to sha256(file(filename)), but because file accepts only UTF-8 text it cannot be used to create hashes for binary files.
+
+..............................................................
+
+filesha512 is a variant of sha512 that hashes the contents of a given file rather than a literal string.
+
+This is similar to sha512(file(filename)), but because file accepts only UTF-8 text it cannot be used to create hashes for binary files.
+
+...........................................................
+
+md5 - computes the MD5 hash of a given string and encodes it with hexadecimal digits
+
+> md5("hello world")
+5eb63bbbe01eeed093cb22bb8f5acdc3
+
+...............................................................................
+
+rsadecrypt - decrypts an RSA-encrypted ciphertext, returning the corresponding cleartext.
+
+> rsadecrypt(filebase64("${path.module}/ciphertext"), file("privatekey.pem"))
+Hello, world!
+
+...................................................................................
+
+sha1 - computes the SHA1 hash of a given string and encodes it with hexadecimal digits
+
+> sha1("hello world")
+2aae6c35c94fcfb415dbe95f408b9ce91ee846ed
+
+.................................................................................
+
+sha256 - computes the SHA256 hash of a given string and encodes with with hexidecimal digits
+
+> sha256("hello world")
+b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9
+
+.................................................................................
+
+sha512 - computes the SHA512 hash of a given string and encodes with with hexidecimal digits
+
+> sha512("hello world")
+309ecc489c12d6eb4cc40f50c902f2b4d0ed77ee511a7c7a9bcd3ca86d4cd86f989dd35bc5ff499670da34255b45b0cfd830e81f605dcf7dc5542e93ae9cd76f
+
+..................................................................................
+
+uuid - generates a UUID-format strings using random bytes
+
+The function generates a well-understood string representation of a 128-bit value, but the output is not RFC-compliant.
+
+> uuid()
+b5ee72a3-54dd-c4b8-551c-4bdc0204cedb
+
+...............................................................
+
+uuidv5 - generates a name-based UUID, as described in RFC 4122 section 4.3, also known as a "version 5" UUID.
+
+Unlike the pseudo-random UUIDs generated by uuid, name-based UUIDs derive from namespace and an name, producing the same UUID value every time if the namespace and name are unchanged.
+
+Name-based UUID namespaces are themselves UUIDs, but for readability this function accepts some keywords as aliases for the namespaces that were assigned by RFC 4122:
+
+"dns"	6ba7b810-9dad-11d1-80b4-00c04fd430c8	A fully-qualified DNS domain name.
+"url"	6ba7b811-9dad-11d1-80b4-00c04fd430c8	Any valid URL as defined in RFC 3986.
+"oid"	6ba7b812-9dad-11d1-80b4-00c04fd430c8	An ISO/IEC object identifier
+"x500"	6ba7b814-9dad-11d1-80b4-00c04fd430c8	X.500 Distinguished Name
+
+examples:
+
+> uuidv5("dns", "www.terraform.io")
+a5008fae-b28c-5ba5-96cd-82b4c53552d6
+
+> uuidv5("url", "https://www.terraform.io/")
+9db6f67c-dd95-5ea0-aa5b-e70e5c5f7cf5
+
+> uuidv5("oid", "1.3.6.1.4")
+af9d40a5-7a36-5c07-b23a-851cd99fbfa5
+
+> uuidv5("x500", "CN=Example,C=GB")
+84e09961-4aa4-57f8-95b7-03edb1073253
+
+.....................................................................................................
+
+IP NETWORK FUNCTIONS
+---------------------
+
+cidrhost - calculates a full host ip address for a given host number within a given IP network address prefix
+
+formt: cidrhost(prefix, hostnum)
+
+> cidrhost("10.12.112.0/20", 16)
+10.12.112.16
+> cidrhost("10.12.112.0/20", 268)
+10.12.113.12
+> cidrhost("fd00:fd12:3456:7890:00a2::/72", 34)
+fd00:fd12:3456:7890::22
+
+....................................................................
+
+cidrnetmask - converts and IPV4 address prefix given in CIDR notation into a subnet mask address
+
+> cidrnetmask("172.16.0.0/12")
+255.240.0.0
+
+..................................................................
+
+cidrsubnet - calculates a subnet address within given IP network address prefix.
+
+format: cidrsubnet(prefix, newbits, netnum)
+
+examples:
+
+> cidrsubnet("172.16.0.0/12", 4, 2)
+172.18.0.0/16
+> cidrsubnet("10.1.2.0/24", 4, 15)
+10.1.2.240/28
+> cidrsubnet("fd00:fd12:3456:7890::/56", 16, 162)
+fd00:fd12:3456:7800:a200::/72
+
+.......................................................
+
+cidrsubnets - calculates a sequence of consecutive IP address ranges within a particular CIDR prefix.
+
+format: cidrsubnets(prefix, newbits...)
+
+> cidrsubnets("10.1.0.0/16", 4, 4, 8, 4)
+[
+  "10.1.0.0/20",
+  "10.1.16.0/20",
+  "10.1.32.0/24",
+  "10.1.48.0/20",
+]
+
+> cidrsubnets("fd00:fd12:3456:7890::/56", 16, 16, 16, 32)
+[
+  "fd00:fd12:3456:7800::/72",
+  "fd00:fd12:3456:7800:100::/72",
+  "fd00:fd12:3456:7800:200::/72",
+  "fd00:fd12:3456:7800:300::/88",
+]
+
+........................................................................
+
+TYPE CONVERSION FUNCTIONS
+-------------------------
+
+can - evaluates the given expression and returns a boolean value indicating whether the expression produced a result without any errors.
+
+variable "timestamp" {
+  type        = string
+
+  validation {
+    # formatdate fails if the second argument is not a valid timestamp
+    condition     = can(formatdate("", var.timestamp))
+    error_message = "The timestamp argument requires a valid RFC 3339 timestamp."
+  }
+}
+
+..................................................
+
+issensitive - takes any value and returns true if Terraform treats it as sensitive, with the same meaning and behavior as for sensitive input variables.
+
+> issensitive(sensitive("secret"))
+true
+> issensitive("hello")
+false
+> sensitive(var.my-var-with-sensitive-set-to-true)
+true
+
+...................................................
+
+nonsensitive - Takes a sensitive value and returns a copy of that value with the sensitive 
+              marking removed, thereby exposing the sensitive value.
+
+Warning: Using this function indiscriminately will cause values that Terraform would normally 
+have considered as sensitive to be treated as normal values and shown clearly in Terraform's 
+output. Use this function only when you've derived a new value from a sensitive value in a way 
+that eliminates the sensitive portions of the value.
+
+output "sensitive_example_hash" {
+  value = nonsensitive(sha256(var.sensitive_example))
+}
+
+..........................................................
+
+tobool - converts its argument to a boolean value.
+
+> tobool(true)
+true
+> tobool("true")
+true
+> tobool(null)
+null
+> tobool("no")
+Error: Invalid function argument
+
+Invalid value for "v" parameter: cannot convert "no" to bool: only the strings
+"true" or "false" are allowed.
+
+> tobool(1)
+Error: Invalid function argument
+
+Invalid value for "v" parameter: cannot convert number to bool.
+
+................................................
+
+tolist - converts its argument to a list value.
+
+> tolist(["a", "b", "c"])
+[
+  "a",
+  "b",
+  "c",
+]
+
+.........................................
+
+tomap - converts its argument to a map value.
+
+> tomap({"a" = 1, "b" = 2})
+{
+  "a" = 1
+  "b" = 2
+}
+
+...............................................
+
+tonumber - converts its argument to a number value.
+
+> tonumber(1)
+1
+> tonumber("1")
+1
+> tonumber(null)
+null
+> tonumber("no")
+Error: Invalid function argument
+
+Invalid value for "v" parameter: cannot convert "no" to number: string must be
+a decimal representation of a number.
+
+.........................................
+
+toset - converts its argument to a set value.
+
+> toset(["a", "b", "c"])
+[
+  "a",
+  "b",
+  "c",
+]
+
+..............................................
+
+tostring - converts its argument to a string value
+
+> tostring("hello")
+"hello"
+> tostring(1)
+"1"
+> tostring(true)
+"true"
+> tostring(null)
+tostring(null)
+> tostring([])
+Error: Invalid function argument
+
+Invalid value for "v" parameter: cannot convert tuple to string.
+
+......................................................
+
+try - evaluates all of its argument expressions in turn and returns the result of the first one that does not produce any errors
+
+locals {
+  raw_value = yamldecode(file("${path.module}/example.yaml"))
+  normalized_value = {
+    name   = tostring(try(local.raw_value.name, null))
+    groups = try(local.raw_value.groups, [])
+  }
+}
+
+................................................................
+
+type - returns the type of a given value
+
+> type(var.list)
+tuple
+> type(local.default_list)
+tuple([
+    object({
+        foo: string,
+        map: object({
+            bleep: string,
+        }),
+    }),
+    object({
+        beep: string,
+    }),
+])
+
+....................................................
+
+
+
+
+
+

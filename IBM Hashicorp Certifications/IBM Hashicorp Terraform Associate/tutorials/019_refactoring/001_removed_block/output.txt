@@ -1,0 +1,49 @@
+% terraform apply --auto-approve
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+
+Terraform will perform the following actions:
+
+ # module.apache.aws_instance.my_server will no longer be managed by Terraform, but will not be destroyed
+ # (destroy = false is set in the configuration)
+ . resource "aws_instance" "my_server" {
+        id                                   = "i-0dee2b360e22d3135"
+        tags                                 = {
+            "Name" = "myserver"
+        }
+        # (41 unchanged attributes hidden)
+
+        # (9 unchanged blocks hidden)
+    }
+
+ # module.apache.aws_key_pair.deployer will no longer be managed by Terraform, but will not be destroyed
+ # (destroy = false is set in the configuration)
+ . resource "aws_key_pair" "deployer" {
+        id              = "deployer-key"
+        # (9 unchanged attributes hidden)
+    }
+
+ # module.apache.aws_security_group.sg_my_server will no longer be managed by Terraform, but will not be destroyed
+ # (destroy = false is set in the configuration)
+ . resource "aws_security_group" "sg_my_server" {
+        id                     = "sg-00cb44156dffb09ec"
+        name                   = "sg_my_server"
+        # (10 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  - public_ip = "100.54.209.139" -> null
+╷
+│ Warning: Some objects will no longer be managed by Terraform
+│ 
+│ If you apply this plan, Terraform will discard its tracking information for the following objects, but it will not delete them:
+│  - module.apache.aws_key_pair.deployer
+│  - module.apache.aws_security_group.sg_my_server
+│  - module.apache.aws_instance.my_server
+│ 
+│ After applying this plan, Terraform will no longer manage these objects. You will need to import them into Terraform to manage them again.
+╵
+
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.

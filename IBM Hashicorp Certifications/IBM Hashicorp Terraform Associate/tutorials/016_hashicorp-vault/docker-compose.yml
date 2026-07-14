@@ -1,0 +1,29 @@
+services:
+  vault:
+    image: hashicorp/vault:latest
+    container_name: vault
+    restart: unless-stopped
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - ./vault/config:/vault/config
+      - ./vault/data:/vault/file
+      - ./vault/logs:/vault/logs
+    environment:
+      VAULT_ADDR: 'http://0.0.0.0:8200'
+    command: server
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    volumes:
+      - ./cloudflared:/home/nonroot/.cloudflared
+    environment:
+      - TUNNEL_TOKEN=${CF_TUNNEL_TOKEN}
+    command: tunnel --url http://vault:8200 run
+volumes:
+  vault-data:
+  vault-config:
+  vault-logs:
+  cloudflared:

@@ -1,0 +1,26 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowListS3Bucket",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::795693417330:user/terraform_user"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::terraform-state-0392024"
+        },
+        {
+            "Sid": "PutS3Object",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::795693417330:user/terraform_user"
+            },
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::terraform-state-0392024/tfstate/demo.tfstate"
+        }
+    ]
+}

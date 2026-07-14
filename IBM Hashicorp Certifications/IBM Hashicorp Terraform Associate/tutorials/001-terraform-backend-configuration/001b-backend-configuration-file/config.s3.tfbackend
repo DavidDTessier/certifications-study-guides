@@ -1,0 +1,4 @@
+bucket = "terraform-state-0392024"
+key = "tfstate/demo.tfstate"
+dynamodb_table = "tf-lock-table"
+region = "us-east-1"

@@ -1,0 +1,43 @@
+% terraform plan
+module.apache-instance-2.data.aws_vpc.default_vpc: Reading...
+module.apache-instance-2.data.aws_ami.east-amazon-linux-2: Reading...
+module.apache-instance-2.aws_key_pair.deployer: Refreshing state... [id=deployer-key]
+module.apache-instance-2.data.aws_ami.east-amazon-linux-2: Read complete after 1s [id=ami-0199fa5fada510433]
+module.apache-instance-2.data.aws_vpc.default_vpc: Read complete after 1s [id=vpc-816043fb]
+module.apache-instance-2.aws_security_group.sg_my_server: Refreshing state... [id=sg-00cb44156dffb09ec]
+module.apache-instance-2.aws_instance.my_server: Refreshing state... [id=i-0dee2b360e22d3135]
+
+Terraform will perform the following actions:
+
+  # module.apache-instance.aws_instance.my_server has moved to module.apache-instance-2.aws_instance.my_server
+    resource "aws_instance" "my_server" {
+        id                                   = "i-0dee2b360e22d3135"
+        tags                                 = {
+            "Name" = "myserver"
+        }
+        # (40 unchanged attributes hidden)
+
+        # (9 unchanged blocks hidden)
+    }
+
+  # module.apache-instance.aws_key_pair.deployer has moved to module.apache-instance-2.aws_key_pair.deployer
+    resource "aws_key_pair" "deployer" {
+        id              = "deployer-key"
+        tags            = {}
+        # (9 unchanged attributes hidden)
+    }
+
+  # module.apache-instance.aws_security_group.sg_my_server has moved to module.apache-instance-2.aws_security_group.sg_my_server
+    resource "aws_security_group" "sg_my_server" {
+        id          = "sg-00cb44156dffb09ec"
+        name        = "sg_my_server"
+        tags        = {}
+        # (9 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 0 to change, 0 to destroy.
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply"
+now.

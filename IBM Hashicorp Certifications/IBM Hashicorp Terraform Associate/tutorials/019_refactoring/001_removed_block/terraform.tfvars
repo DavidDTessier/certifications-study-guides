@@ -1,0 +1,1 @@
+public_key="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICwjgFyOvTgMywyw2x02oTbnAOlG+1WygxuQKxommJw0 davidtessier@Davids-MacBook-Pro-2.local"

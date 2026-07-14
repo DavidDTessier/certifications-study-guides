@@ -1,0 +1,793 @@
+
+
+
+
+------- OLD---------
+
+
+## 8. Read, Generate, and Modify Configuration
+### 8a. Demonstrate use of variables and outputs
+* Local variables
+    * assigns a name to an expression, so you can use it multiple times within a module/function without repeating it.
+    * Locals are set using the `locals` block ← Static value
+* Input Variables
+    * function arguments
+    * declared in a `variable` block
+    * name can be any valid name except:
+        * source
+        * version
+        * providers
+        * count
+        * for_each
+        * lifecyle
+        * depends_on
+        * locals
+    * input order of precedence
+        * defaults < env vars < terraform.tfvars files < terraform.tfvars.json file < .auto.tfvars < command line (-var & -var-file)
+            * side note `terraform.tfvars` is the most popular way for manipulating variables used out in the wild
+* Output variables
+    * function return values
+    * expressed in the `output` block
+    * root module, the output is displayed to the user
+    * computed/rendered values after a Terraform apply is performed. 
+    * Outputs allow you:
+        * to obtain information after resource provisioning e.g. public IP address
+        * output a file of values for programmatic integration
+        * Cross-reference stacks via outputs in a state file via `terraform_remote _state`
+
+    * You can optionally provide a description
+    * Similar to Input you can mark the output as sensitive (`sensitive=true`) so it does not show in the output of your Terminal, however the value is **STILL** visible within the state file.
+        * NOTE: If you mark an input as sensitive but not an output it will error out
+    * To print all the outputs for a state file use the `terraform output` command.
+    * Print a specific output with `terraform output {name}` command
+        * Use the `–json` flag to get output as json data.
+        * Use the `–raw` flag to preserve quotes for strings
+
+**Declaring an output value**
+```
+output "instance_ip_addr" {
+  value = aws_instance.server.private_ip
+}
+```
+
+Since output values are just a means for passing data out of a module, it is usually not necessary to worry about their relationships with other nodes in the dependency graph.
+
+However, when a parent module accesses an output value exported by one of its child modules, the dependencies of that output value allow Terraform to correctly determine the dependencies between resources defined in different modules. This can be done leveraging the `depends_on` block, as should below. 
+
+```
+output "instance_ip_addr" {
+  value       = aws_instance.server.private_ip
+  description = "The private IP address of the main server instance."
+
+  depends_on = [
+    # Security group rule must be created before this IP address could
+    # actually be used, otherwise the services will be unreachable.
+    aws_security_group_rule.local_access,
+  ]
+}
+```
+
+The `depends_on` argument should be used only as a last resort. When using it, always include a comment explaining why it is being used, to help future maintainers understand the purpose of the additional dependency.
+
+**Links**
+* Input variables --> https://www.terraform.io/docs/language/values/variables.html
+* Output Values --> https://www.terraform.io/docs/language/values/outputs.html
+* Customize Terraform Configuration with Variables --> https://learn.hashicorp.com/tutorials/terraform/variables
+* Output Data from Terraform --> https://learn.hashicorp.com/tutorials/terraform/outputs
+
+### 8b. Describe secure secret inject best practices
+
+* Mark sensitive values as `sensitive`
+* Never put actual secret values into a .tf file as they would be checked into source control
+* Passwords, API tokens, access tokens, etc... must be obfuscated
+* Never check your `statefile` to source control (same reason as above)
+* Use environment variables by setting `TF_VAR_<NAME>`
+* If you are using Terraform Cloud use the environment variables for the appropriate workspace
+
+Use a secrets management solution like Vault
+
+
+
+#### Terraform and Vault
+
+When a developer is working with Terraform and they need to deploy to a provider eg. AWS, they will need AWS credentials
+AWS Credentials are long-lived, meaning a user generates a key and secret, and they are usable until they are deleted.
+The AWS Credentials reside on the developer’s local machine, and so that machine is at risk of being compromised by malicious actors looking to steal the credentials.
+If we could:
+* provide credentials Just-In-Time (JIT)
+* expire the credentials after a short amount of time (short-lived)
+We can reduce the attack surface area of the local machine.
+
+Vault can be used to inject short-lived secrets at the time of terraform apply:
+![Terraform-Vault](images/terraform-vault.png)
+
+Terraform CLI will use the environment variables `VAULT_ADDR`
+`VAULT_TOKEN` when performing actions with vault.
+
+#### Vault Injection via Data Source
+
+A vault server is provisioned and vault engine is configured e.g. `AWS Secret Engine`.
+
+_Vault_ will create a machine user for AWS and generate short-lived _AWS credentials_ from that machine user.
+
+_Vault_ will manage and apply the _AWS Policy_
+
+Within our Terraform we can provide a _Data Source_ to _Vault_.
+
+```
+data "vault_aws_access_credentials" "creds" {
+  backend = data.terraform_remote_state.admin.outputs.backend
+  role = data.terraform_remote_state.admin.outputs.role
+}
+
+provider "aws" {
+  region = "us-east-1"
+  access_key = data.vault_aws_access_credentials.creds.access_key
+  secret_key = data.vault_aws_access_credentials.creds.secret_key
+}
+```
+When `terraform apply` is run, it will pull short-lived credentials to be used scope for the duration of the current run.
+
+Every time you run `apply` you will get new short-lived credentials.
+
+
+**Links**
+* Vault Provider for Terraform --> https://www.terraform.io/docs/providers/vault/index.html
+* Inject secrets in Terraform using the Vault provider --> https://learn.hashicorp.com/tutorials/terraform/secrets-vault
+
+### 8c. Understand the use of collection and structural types
+
+#### Complex Types
+A complex type is a type that groups multiple values into a single value.
+Complex types are represented by type constructors, but several of them also have shorthand keyword versions.
+There are two categories of complex types:
+* collection types (for grouping similar values)
+  * List, Map, Set
+* structural types (for grouping potentially dissimilar values)
+  * Tuple, Object
+
+#### Collection Types
+
+A collection type allows multiple values of one other type to be grouped together as a single value.
+The type of value within a collection is called its element type.
+The three kinds of collection type:
+  * **List**
+    * It's like an array, you use an integer as the index to retrieve the value. All values must be of the same type. 
+    * Sequence of ordered elements starting a 0
+  * **Map**
+    * It's like a ruby hash or single nested JSON object. You use a key as the index to retrieve the value
+    * Sequence of key/value pairs separated by a comma
+    * Can confusingly use both = or : as the k/v separator
+  * **Set**
+    * Is similar to a list but has no secondary index or preserved ordering, all values must be of the same type and will be cast to match based on the first element
+    * a collection of unique, unordered, unrepeating values
+
+![Complex Types](images/complex-types.png)
+
+#### Structural Types
+
+A structural type allows multiple values of several distinct types to be grouped together as a single value.
+Structural types require a schema as an argument, to specify which types are allowed for which elements.
+The two kinds of structural type, object, and tuple.
+
+* **Object** 
+    * name attributes where each has its own type
+    * is a map with more explicit keying:
+        * `object({ name=string, age=number })`
+        * Example:
+            * `{ name = "John", age = 52 }`
+* **Tuple**
+    * sequence of ordered elements (starting at 0)
+    * Multiple return types with parameters:
+        * `tuple([string, number, bool])`
+        * Example:
+            * `["a", 15, true]`
+
+#### The any Keyword
+
+The keyword `any` is a special construct that serves as a placeholder for a type yet to be decided. `any` is not itself a type: when interpreting a value against a type constraint containing any, Terraform will attempt to find a single actual type that could replace the any keyword to produce a valid result.
+
+For example, given the type constraint `list(any)`, Terraform will examine the given value and try to choose a replacement for the any that would make the result valid.
+
+**Links**
+* Complex Types --> https://www.terraform.io/docs/language/expressions/type-constraints.html#complex-types
+* Customize Terraform configuration with variables -->https://learn.hashicorp.com/tutorials/terraform/variables
+
+### 8d. Create and differentiate `resource` and `data` configuration
+
+#### Resources
+
+![Resources](images/resources.png)
+
+Resources in configuration files represent infrastructure objects e.g. Virtual Machines, Databases, Virtual Network Components, Storage. This is represented by the `resource` block:
+
+```
+resource "aws_instance" "web" {
+  ami           = "ami-a1b2c3d4"
+  instance_type = "t2.micro"
+}
+```
+
+A resource type determines the kind of infrastructure object:
+e.g. aws_instance is an AWS EC2 instance
+
+A resource belongs to a provider.
+Some resource types provide a special timeouts nested block argument that allows you to customize how long certain operations are allowed to take before being considered to have failed.
+
+#### Resource Behavior
+
+![Resource Behavior](images/resource-behavior.png)
+
+When you execute an execution order via Terraform Apply it will perform one of the following to a resource:
+* Create
+  * resources that exist in the configuration but are not associated with a real infrastructure object in the state.
+* Destroy
+  * resources that exist in the state but no longer exist in the configuration.
+* Update in-place
+  * resources whose arguments have changed.
+* Destroy and re-create
+  * resources whose arguments have changed but which cannot be updated in-place due to remote API limitations.
+
+
+#### Resource Meta-Arguments
+
+Terraform language defines several meta-arguments, which can be used with any resource type to change the behavior of resources.
+
+**depends_on**
+
+![depends_on](images/depends_on.png)
+
+The order of which resources are provisioned is important when resources depend on others before they are provisioned.
+Terraform implicitly can determine the order of provision for resources but there may be some cases where it cannot determine the correct order.
+depends_on allows you to explicitly specify a dependency of a resource.
+
+**count**
+
+When you are managing a pool of objects eg. a fleet of Virtual Machines you can use count.
+Specify the amount of instances you want
+Get the current count value (index) via count.index
+This value starts at 0
+Count can accept numeric expressions:
+Must be whole number
+Number must be known before configuration.
+
+```
+resource "aws_instance" "server" {
+  count = 4 # create four similar EC2 instances
+
+  ami           = "ami-a1b2c3d4"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Server ${count.index}"
+  }
+}
+```
+
+**for_each**
+
+![for_each](images/for_each.png)
+
+for_each is similar to count for managing multiple related objects.
+But you can iterate over a map for more dynamic values.
+With a map:
+  * each.key – print out the current key
+  * each.value – print out the current value
+With a list:
+  * each.key – print out the current key
+
+**dynamic**
+Within top-level block constructs like resources, expressions can usually be used only when assigning a value to an argument using the name = expression form. This covers many uses, but some resource types include repeatable nested blocks in their arguments, which typically represent separate objects that are related to (or embedded within) the containing object:
+
+```
+resource "aws_elastic_beanstalk_environment" "tfenvtest" {
+  name = "tf-test-name" # can use expressions here
+
+  setting {
+    # but the "setting" block is always a literal block
+  }
+}
+```
+You can dynamically construct repeatable nested blocks like setting using a special `dynamic` block type, which is supported inside resource, data, provider, and provisioner blocks:
+
+```
+resource "aws_elastic_beanstalk_environment" "tfenvtest" {
+  name                = "tf-test-name"
+  application         = "${aws_elastic_beanstalk_application.tftest.name}"
+  solution_stack_name = "64bit Amazon Linux 2018.03 v2.11.4 running Go 1.12.6"
+
+  dynamic "setting" {
+    for_each = var.settings
+    content {
+      namespace = setting.value["namespace"]
+      name = setting.value["name"]
+      value = setting.value["value"]
+    }
+  }
+}
+```
+
+A dynamic block acts much like a for expression, but produces nested blocks instead of a complex typed value. It iterates over a given complex value, and generates a nested block for each element of that complex value.
+
+* The `label` of the dynamic block ("setting" in the example above) specifies what kind of nested block to generate.
+* The `for_each` argument provides the complex value to iterate over.
+* The `iterator` argument (optional) sets the name of a temporary variable that represents the current element of the complex value. If omitted, the name of the variable defaults to the label of the dynamic block ("setting" in the example above).
+* The `labels` argument (optional) is a list of strings that specifies the block labels, in order, to use for each generated block. You can use the temporary iterator variable in this value.
+* The nested `content` block defines the body of each generated block. You can use the temporary iterator variable inside this block.
+
+Since the `for_each` argument accepts any collection or structural value, you can use a `for` expression or `splat` expression to transform an existing collection.
+* splat example
+  * `var.list[*].id` is the equivalent for `[for o in var.list : o.id]`
+
+
+The `iterator` object (setting in the example above) has two attributes:
+* `key` is the map key or list element index for the current element. If the `for_each` expression produces a set value then key is identical to value and should not be used.
+* `value` is the value of the current element.
+
+
+**lifecycle**
+
+![lifecycle](images/lifecycle.png)
+
+Lifecycle block allows you to change what happens to resources e.g. create, update, destroy.
+Lifecycle blocks are nested within resources:
+* `create_before_destroy` (bool)
+  * When replacing a resource first create the new resource before deleting it (the default is destroy old first)
+  * Useful when resources cant be updated in place after creation
+    - Good example --> https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/launch_configuration#using-with-autoscaling-groups
+* `prevent_destroy` (bool)
+  * Ensures a resource is not destroyed
+* `ignore_changes` (list of attributes)
+  * Don’t change the resource (create, update, destroy) if a change occurs for the listed attributes.
+
+Sample:
+```
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"] # Canonical
+}
+
+resource "aws_launch_configuration" "as_conf" {
+  name_prefix   = "terraform-lc-example-"
+  image_id      = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+resource "aws_autoscaling_group" "bar" {
+  name                 = "terraform-asg-example"
+  launch_configuration = aws_launch_configuration.as_conf.name
+  min_size             = 1
+  max_size             = 2
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+```
+
+The above sample will generate a unique name for the Launch Configuration and can then update the autoscaling group without conflict before destroying the previous Launch Configuration.
+
+#### Data Sources
+
+![Data Sources](images/data-sources.png)
+
+Data sources allow Terraform to use information defined outside of Terraform, defined by another separate Terraform configuration, or modified by functions.
+You specify what kind of external resource you want to select
+You use filters to narrow down the selection.
+You use `data.` to reference data sources
+
+#### References to Named Values
+
+Named Values are built-in expressions to reference various values such as:
+* Resources Resource Type.Name e.g. aws_instance.my _server
+* Input variables var.Name
+* Local values local.Name
+* Child module outputs module.Name
+* Data sources data.Data Type.Name
+* Filesystem and workspace info
+  * `path.module` - path of the module where the expression is placed
+  * `path.root` - path of the root module of the configuration
+  * `path.cwd` - path of the current working directory
+  * `terraform.workspace` – name of the currently selected workspace
+* Block-local values (within the body of blocks)
+  * `count.index` (when you use the count meta argument)
+  * `each.key` / `each.value` (when you use the for_each meta argument )
+  * `self.` - self reference information within the block (provisioners and connections)
+
+Named values resemble the attribute notation for map (object) values but are not objects and do not act as objects.
+
+You cannot use square brackets to access attributes of Named Values like an object.
+
+
+**Links**
+* Resources --> https://www.terraform.io/docs/language/resources/index.html
+* Data Sources --> https://www.terraform.io/docs/language/data-sources/index.html
+* Query Data Sources --> https://learn.hashicorp.com/tutorials/terraform/data-sources
+
+
+### 8e. Use resource addressing and resource parameters to connect resources together
+
+A resource address is a string that identifies zero or more resource instances in your overall configuration.
+
+An address is made up of two parts:
+
+```
+[module path][resource spec]
+```
+
+In some contexts Terraform might allow for an incomplete resource address that only refers to a module as a whole, or that omits the index for a multi-instance resource. In those cases, the meaning depends on the context, so you'll need to refer to the documentation for the specific feature you are using which parses resource addresses.
+
+**Module Path**
+
+A module path addresses a module within the tree of modules. It takes the form:
+
+```
+module.module_name[module index]
+```
+
+* `module` - Module keyword indicating a child module (non-root). Multiple module keywords in a path indicate nesting.
+* `module_name` - User-defined name of the module.
+* `[module index]` - (Optional) Index to select an instance from a module call that has multiple instances, surrounded by square bracket characters ([ and ]).
+
+**Resource spec**
+
+A resource spec addresses a specific resource instance in the selected module. It has the following syntax:
+
+```
+resource_type.resource_name[instance index]
+```
+
+* `resource_type` - Type of the resource being addressed.
+* `resource_name` - User-defined name of the resource.
+* `[instance index]` - (Optional) Index to select an instance from a resource that has multiple instances, surrounded by square bracket characters ([ and ]).
+    * if `count` is used, ref is a list accessed with [N]
+    * if `for_each` is used, ref is a map accessed with ["key"]
+
+**Other**
+* Input variables are access via `var.<NAME>`
+* Locals `local.<NAME>`
+* Child module outputs `module.<MODULE_NAME>`
+    * same `count` and `for_each` rules as resources
+* Data blocks `data.<DATA_TYPE>.<NAME>`
+    * same `count` and `for_each` rules as resources
+* Filesystem/workspace info
+    * `path.module` location of expression (don't use in write operations)
+    * `path.root` for root module location
+    * `terraform.workspace` currently selected workspace
+* Block `local` values
+    * `count.index`
+    * `each.key`/ `each.value`
+    * `self`
+        * represents the parent resource, and has all of that resource's attributes.
+**Links**
+* Resource Addressing --> https://www.terraform.io/docs/cli/state/resource-addressing.html
+* References to Named Values --> https://www.terraform.io/docs/language/expressions/references.html
+* Create Resource Dependencies --> https://learn.hashicorp.com/tutorials/terraform/dependencies
+
+### 8f. Use HCL and Terraform functions to write configuration
+
+#### Built-in Functions
+
+Terraform language includes a number of built-in functions that you can call from within expressions to transform and combine values.
+
+##### Numeric Functions
+
+* `abs` returns the absolute value of the given number
+* `floor` returns the closest whole number that is less than or equal to the given value, which may be a fraction
+* `log` returns the logarithm of a given number in a given base
+* `ceil` returns the closest whole number that is greater than or equal to the given value
+* `min` takes one or more numbers and returns the smallest number from the set
+* `max` takes one or more numbers and returns the greatest number from the set
+* `parseint` parses the given string as a representation of an integer in the specified base and returns the resulting number
+* `pow` calculates an exponent, by raising its first argument to the power of the second argument.
+* `signum` determines the sign of a number, returning a number between -1 and 1 to represent the sign
+
+![numeric func 1](images/numeric-functions-1.png)
+
+![numeric func 2](images/numeric-functions-2.png)
+
+##### String Functions
+* `chomp` removes newline characters at the end of a string.
+* `format` produces a string by formatting a number of other values according to a specification string
+* `endswith` takes two values: a string to check and a suffix string. The function returns true if the first string ends with that exact suffix.
+* `formatlist` produces a list of strings by formatting a number of other values according to a specification string
+* `indent` adds a given number of spaces to the beginnings of all but the first line in a given multi-line string
+* `join` produces a string by concatenating together all elements of a given list of strings with the given delimiter
+* `lower` converts all cased letters in the given string to lowercase.
+* `regex` applies a regular expression to a string and returns the matching substrings
+* `regexall` applies a regular expression to a string and returns a list of all matches
+* `replace` searches a given string for another given substring, and replaces each occurrence with a given replacement string
+* `split` produces a list by dividing a given string at all occurrences of a given separator.
+* `startswith` takes two values: a string to check and a prefix string. The function returns true if the string begins with that exact prefix.
+* `strcontains` function checks whether a substring is within another string.
+* `strrev` reverses the characters in a string
+* `substr` extracts a substring from a given string by offset and length
+* `title` converts the first letter of each word in the given string to uppercase
+* `trim` removes the specified characters from the start and end of the given string
+* `trimprefix` removes the specified prefix from the start of the given string. If the string does not start with the prefix, the string is returned unchanged
+* `trimsuffix` removes the specified suffix from the end of the given string
+* `trimspace` removes all types of whitespace from both the start and the end of a string
+* `upper` converts all cased letters in the given string to uppercase
+
+![1](images/string-functions-1.png)
+![2](images/string-functions-2.png)
+![3](images/string-functions-3.png)
+![4](images/string-functions-4.png)
+
+##### Collection Functions
+* `alltrue` returns true if all elements in a given collection are true or "true". It also returns true if the collection is empty.
+* `anytrue` returns true if any element in a given collection is true or "true". It also returns false if the collection is empty
+* `chunklist` splits a single list into fixed-size chunks, returning a list of lists
+* `coalesce` takes any number of arguments and returns the first one that isn't null or an empty string
+* `coalescelist` takes any number of list arguments and returns the first one that isn't empty
+* `compact` takes a list of strings and returns a new list with any empty string elements removed
+* `concat` takes two or more lists and combines them into a single list
+* `contains` determines whether a given list or set contains a given single value as one of its elements
+* `distinct` takes a list and returns a new list with any duplicate elements removed
+* `element` retrieves a single element from a list
+* `index` finds the element index for a given value in a list
+* `flatten` takes a list and replaces any elements that are lists with a flattened sequence of the list contents
+* `keys` takes a map and returns a list containing the keys from that map
+* `length` determines the length of a given list, map, or string
+* `lookup` retrieves the value of a single element from a map, given its key. If the given key does not exist, the given default value is returned instead.
+* `matchkeys` constructs a new list by taking a subset of elements from one list whose indexes match the corresponding indexes of values in another list
+* `merge` takes an arbitrary number of maps or objects, and returns a single map or object that contains a merged set of elements from all arguments
+* `one` takes a list, set, or tuple value with either zero or one elements. If the collection is empty, one returns null. Otherwise, one returns the first element. If there are two or more elements then one will return an error
+* `range` generates a list of numbers using a start value, a limit value, and a step value
+* `reverse` takes a sequence and produces a new sequence of the same length with all of the same elements as the given sequence but in reverse order
+* `setintersection` function takes multiple sets and produces a single set containing only the elements that all of the given sets have in common. In other words, it computes the intersection of the sets
+* `setproduct` function finds all of the possible combinations of elements from all of the given sets by computing the Cartesian product.
+* `setsubtract` function returns a new set containing the elements from the first set that are not present in the second set. In other words, it computes the relative complement of the first set in the second set
+* `setunion` function takes multiple sets and produces a single set containing the elements from all of the given sets. In other words, it computes the union of the sets
+* `slice` extracts some consecutive elements from within a list
+* `sort` takes a list of strings and returns a new list with those strings sorted lexicographically
+* `sum` takes a list or set of numbers and returns the sum of those numbers
+* `transpose` takes a map of lists of strings and swaps the keys and 
+* `values` takes a map and returns a list containing the values of the elements in that map
+* `zipmap` constructs a map from a list of keys and a corresponding list of values
+
+![1](images/collection-functions-1.png)
+![2](images/collection-functions-2.png)
+![3](images/collection-functions-3.png)
+![4](images/collection-functions-4.png)
+
+##### Encode Functions
+* Encode
+  * `base64encode`
+  * `jsonencode`
+  * `textencodebase64`
+  * `yamlencode`
+  * `base64gzip`
+  * `urlencode`
+* Decode
+  * `base64decode`
+  * `csvdecode`
+  * `jsondecode`
+  * `textdecodebase64`
+  * `yamldecode`
+
+![encode-decode](images/encode-decode-functions.png)
+
+##### Filesystem Functions
+
+* `abspath` takes a string containing a filesystem path and converts it to an absolute path. That is, if the path is not absolute, it will be joined with the current working directory
+* `dirname` takes a string containing a filesystem path and removes the last portion from it.
+* `pathexpand` takes a filesystem path that might begin with a ~ segment, and if so it replaces that segment with the current user's home directory path
+* `basename` takes a string containing a filesystem path and removes all except the last portion from it
+* `file` reads the contents of a file at the given path and returns them as a string
+* `fileexists` determines whether a file exists at a given path
+* `fileset` enumerates a set of regular file names given a path and pattern
+* `filebase64` reads the contents of a file at the given path and returns them as a base64-encoded string
+* `templatefile` reads the file at the given path and renders its content as a template using a supplied set of template variables
+
+![fs functions](images/filesystem-functions.png)
+
+##### Date and Time Functions
+
+* `formatdate` converts a timestamp into a different time format
+* `timeadd` adds a duration to a timestamp, returning a new timestamp
+* `timestamp` returns a UTC timestamp string in RFC 3339 format
+* `timecmp` compares two timestamps and returns a number that represents the ordering of the instants those timestamps represent
+* `plantimestamp` returns a UTC timestamp string in RFC 3339 format. function not available in terraform console
+
+
+![dt funcs](images/date-time-functions.png)
+
+##### Hash and Crypto Functions
+
+* `base64sha256`
+* `base64sha512`
+* `bcrypt`
+* `filebase64sha256`
+* `filebase64sha512`
+* `filemd5`
+* `filesha1`
+* `filesha256`
+* `filesha512`
+* `md5`
+* `rsadecrypt`
+* `sha1`
+* `sha256`
+* `sha512`
+* `uuid`
+* `uuidv5`
+
+![hash-crypto](images/crypto-hash-functions.png)
+
+##### IP Network Functions
+* `cidrhost` calculates a full host IP address for a given host number within a given IP network address prefix
+* `cidrnetmask` converts an IPv4 address prefix given in CIDR notation into a subnet mask address
+* `cidrsubnet` calculates a subnet address within given IP network address prefix
+* `cidrsubnets` calculates a sequence of consecutive IP address ranges within a particular CIDR prefix.
+
+![networking](images/networking-functions.png)
+
+##### Type Conversion Functions
+
+* `can` evaluates the given expression and returns a boolean value indicating whether the expression produced a result without any errors
+* `issensitive` takes any value and returns true if Terraform treats it as sensitive, with the same meaning and behavior as for sensitive input variables.
+* `defaults` a specialized function intended for use with input variables whose type constraints are object types or collections of object types that include optional attributes
+* `nonsensitive` takes a sensitive value and returns a copy of that value with the sensitive marking removed, thereby exposing the sensitive value
+* `sensitive` takes any value and returns a copy of it marked so that Terraform will treat it as sensitive, with the same meaning and behaviour as for sensitive input variables.
+* `tobool` converts its argument to a boolean value
+* `tomap` converts its argument to a map value
+* `toset` converts its argument to a set value.
+* `tolist` converts its argument to a list value
+* `tonumber` converts its argument to a number value
+* `tostring` converts its argument to a set value
+* `try` evaluates all of its argument expressions in turn and returns the result of the first one that does not produce any errors
+* `type` returns the type of a given value
+
+![type conversion](images/type-conversion-functions.png)
+
+##### Terraform-specific functions
+
+These are only available in Terraform v1.8+
+To use these functions you require the following module included in the require_providers blocks
+
+```
+terraform {
+  required_providers {
+    terraform = {
+      source = "terraform.io/builtin/terraform"
+    }
+  }
+}
+```
+
+* `provider::terraform::encode_tfvars` - takes an object value and produces a string containing a description of that object using the same syntax as Terraform CLI would expect in a .tfvars file.
+
+Call to the function
+```
+provider::terraform::encode_tfvars({
+  example = "Hello!"
+})
+```
+
+Output
+
+```
+example = "Hello!"
+```
+
+* `provider::terraform::decode_tfvars` - takes a string containing the content of a .tfvars file and returns an object describing the raw variable values it defines.
+
+Call to the function
+```
+provider::terraform::decode_tfvars(
+  <<EOT
+    example = "Hello!"
+  EOT
+)
+
+```
+output 
+```
+{
+   example = "Hello"
+}
+```
+
+* `provider::terraform::encode_expr` - takes any value and produces a string containing Terraform language expression syntax approximating that value.
+
+```
+locals {
+  workspace_vars = {
+    example1 = "Hello"
+    example2 = ["A", "B"]
+  }
+}
+
+resource "tfe_variable" "test" {
+  for_each = local.workspace_vars
+
+  category     = "terraform"
+  workspace_id = tfe_workspace.example.id
+
+  key   = each.key
+  value = provider::terraform::encode_expr(each.value)
+  hcl   = true
+}
+
+```
+
+**Links**
+* Built-In Functions --> https://www.terraform.io/docs/language/functions/index.html
+* Perform Dynamic Operations with functions --> https://learn.hashicorp.com/tutorials/terraform/functions
+* Create Dynamic Expressions --> https://learn.hashicorp.com/tutorials/terraform/expressions
+
+### 8g. Describe built-in dependency management (order of execution based)
+
+* Terraform generates a dependency graph for determining which resources need to be built 1st, 2nd, 3rd, etc...
+    * `depends_on` can be used to alter dependencies
+* The `lifecycle` block along with `create_before_destroy` and `prevent_destroy` are additional tools in the lifecycle tool belt
+* Items with no dependencies are built in parallel to speed up the provisioning process
+* By default, up to 10 concurrent operations can be run at the same time
+* This can be changed with the `-parallelism` flag on `plan`, `apply`, & `destroy` commands
+
+
+#### Resource Graph
+Terraform builds a [dependency graph](https://en.wikipedia.org/wiki/Dependency_graph) from Terraform configurations and walks this graph to generate plans, refresh state, and more.
+
+When you use _terraform graph_, this is a **visual presentation_ of the dependency graph.
+
+For some background on graph theory, and a summary of how Terraform applies it, see the HashiCorp 2016 presentation [Applying Graph Theory to Infrastructure as Code](https://www.youtube.com/watch?v=Ce3RNfRbdZ0). This presentation also covers some similar ideas to the following guide.
+
+#### Graph Nodes
+
+Three types exits:
+
+* **Resource Node**: defines a single resource. If `count` is used then there will be one resource node for each count.
+* **Provider Configuration Node**: Represents the time to fully configure a provider.  This is when the provider configuration block is given to a provider, such as AWS security credentials.
+* **Resource Meta-Node**: Represents a group of resources, but does not represent any action on its own. This node is only present if a resource has a count greater than 1.
+
+When running `terraform graph`, you can see all of these nodes present.
+
+#### Building the Graph
+
+The graph is build in sequential order:
+
+1. Resource nodes are added based on configuration. If a diff (plan) or state is present, that meta-data is attached to each resource node.
+2. Resources are mapped to provisioners if they have any defined. This occurs after all resource nodes are created so resources with the same provisioner type can share the provisioner implementation.
+3. Dependencies from the `depends_on`, known as _explicit_ dependencies, are used to define edges between Resources
+4. If existing state is present, any "orphan" resources are added to the graph. Orphan resources are any resource that no longer exist in the configuration but exist in the state file.
+5. Resources are mapped to providers, _Provider Configuration Nodes_ are created here.
+6. Interpolations are parsed in resources and provider configs to determine dependencies.
+7. Create a root node which points to all resources and is created so there is a single root to the dependency graph. This is ignored during traversal.
+8. If a diff is present, traverse all resource nodes and find resource that are being destroyed. These are split:
+  * one that destroys the node
+  * another that creates the node (if its being recreated)
+The reason the nodes must be split is because the destroy order is often different from the create order, and so they can't be represented by a single graph node.
+9. Validate the graph has no cycles and has a single root
+
+#### Walking the Graph
+
+This uses a standard [depth-first traversal](https://en.wikipedia.org/wiki/Depth-first_search) and is done in parallel: a node is walked as soon as all of its dependencies are walked.
+
+The parallelism is by default up to 10 nodes will be processed concurrently. During any operation `plan`, `apply`, and `destroy` you can set this feature using the `-parallelism` flag. This is an advanced workflow and is not recommended for normal Terraform usage.
+
+Note that some providers (AWS, for example), handle API rate limiting issues at a lower level by implementing graceful backoff/retry in their respective API clients. For this reason, Terraform does not use this parallelism feature to address API rate limits directly.
+
+Example Graph:
+![Graph](images/graph.svg)
+
+**Links**
+* Resource Graph --> https://www.terraform.io/docs/internals/graph.html
+* Create Resource Dependencies --> https://learn.hashicorp.com/tutorials/terraform/dependencies
+
+

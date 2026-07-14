@@ -1,0 +1,34 @@
+split(" ", var .str)
+tolist([
+  "hello",
+  "world",
+])
+
+upper(var .str)
+"HELLO WORLD"
+> 
+
+> trim(var .str, "d")
+"hello worl"
+>  
+
+bcrypt(var .str)
+"$2a$10$kFrGZ2UzzoTRADG9NQhpTuw26bytCLyvfWUER1nJIDDL12dYhhcvC"
+
+> var .items
+tolist([
+  tostring(null),
+  "",
+  "last",
+])
+>  
+
+> coalesce(var .items...)
+"last"
+>  
+
+> values(var .stuff)
+tolist([
+  "day",
+  "world",
+])

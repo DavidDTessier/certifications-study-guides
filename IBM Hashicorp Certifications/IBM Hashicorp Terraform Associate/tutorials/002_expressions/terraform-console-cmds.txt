@@ -1,0 +1,50 @@
+%> terraform console
+> "Hello %{if var.hello == "barsoon"}Mars%{else}World%{endif}"
+
+-- for expression ---
+> [for w in var.worlds : upper(w)]
+[
+  "BARSOON",
+  "JASOOM",
+  "SASOOM",
+  "COSOOM",
+]
+
+[for k,v in var.worlds_map : upper(v)]
+[
+  "MARS",
+  "VENUS",
+  "EARTH",
+  "JUPITER",
+]
+
+
+> {for k,v in var.worlds_map : "${k}" => upper(v)}
+{
+  "barsoon" = "MARS"
+  "cosoom" = "VENUS"
+  "jasoom" = "EARTH"
+  "sasoom" = "JUPITER"
+}
+
+> [for k,v in var.worlds_map : upper(k) if v == "mars"]
+[
+  "BARSOON",
+]
+
+--- splats --
+[ for m in var.worlds_splat : m.mars_name]
+[
+  "barsoon",
+  "jasoom",
+  "sasoom",
+  "cosoom",
+]
+> var.worlds_splat[*].mars_name
+tolist([
+  "barsoon",
+  "jasoom",
+  "sasoom",
+  "cosoom",
+])
+>  

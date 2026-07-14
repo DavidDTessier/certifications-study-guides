@@ -1,0 +1,11 @@
+#cloud-config
+package_upgrade: true
+
+packages:
+  - httpd
+
+runcmd:
+  - yum -y install httpd
+  - systemctl enable httpd.service
+  - systemctl start httpd.service
+  - sudo bash -c "echo 'My web server configured with Terraform!' > /var/www/html/index.html"

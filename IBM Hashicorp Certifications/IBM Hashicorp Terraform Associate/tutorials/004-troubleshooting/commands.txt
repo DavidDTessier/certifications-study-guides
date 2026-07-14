@@ -1,0 +1,3 @@
+% TF_LOG=TRACE TF_LOG_PATH=.\tflog terraform apply
+
+generates .tflog file

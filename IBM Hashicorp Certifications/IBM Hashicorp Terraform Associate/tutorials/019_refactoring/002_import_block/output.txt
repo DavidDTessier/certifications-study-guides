@@ -1,0 +1,208 @@
+%terraform plan
+module.apache-instance.aws_key_pair.deployer: Preparing import... [id=deployer-key]
+module.apache-instance.data.aws_vpc.default_vpc: Reading...
+module.apache-instance.data.aws_ami.east-amazon-linux-2: Reading...
+module.apache-instance.aws_key_pair.deployer: Refreshing state... [id=deployer-key]
+module.apache-instance.data.aws_ami.east-amazon-linux-2: Read complete after 0s [id=ami-0199fa5fada510433]
+module.apache-instance.data.aws_vpc.default_vpc: Read complete after 0s [id=vpc-816043fb]
+module.apache-instance.aws_security_group.sg_my_server: Preparing import... [id=sg-00cb44156dffb09ec]
+module.apache-instance.aws_security_group.sg_my_server: Refreshing state... [id=sg-00cb44156dffb09ec]
+module.apache-instance.aws_instance.my_server: Refreshing state... [id=i-0dee2b360e22d3135]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+-/+ destroy and then create replacement
+
+Terraform will perform the following actions:
+
+  # module.apache-instance.aws_key_pair.deployer must be replaced
+  # (imported from "deployer-key")
+  # Warning: this will destroy the imported resource
+-/+ resource "aws_key_pair" "deployer" {
+      ~ arn             = "arn:aws:ec2:us-east-1:795693417330:key-pair/deployer-key" -> (known after apply)
+      ~ fingerprint     = "1qNaoBP+eIlWCA8oJoZmWPKq4NIg3MWmlxqetAsE9Gw=" -> (known after apply)
+      ~ id              = "deployer-key" -> (known after apply)
+        key_name        = "deployer-key"
+      + key_name_prefix = (known after apply)
+      ~ key_pair_id     = "key-00657a3d697d6a349" -> (known after apply)
+      ~ key_type        = "ed25519" -> (known after apply)
+      + public_key      = (sensitive value) # forces replacement
+        region          = "us-east-1"
+      - tags            = {} -> null
+      ~ tags_all        = {} -> (known after apply)
+    }
+
+  # module.apache-instance.aws_security_group.sg_my_server will be imported
+    resource "aws_security_group" "sg_my_server" {
+        arn         = "arn:aws:ec2:us-east-1:795693417330:security-group/sg-00cb44156dffb09ec"
+        description = "My Server Security Group"
+        egress      = [
+            {
+                cidr_blocks      = [
+                    "0.0.0.0/0",
+                ]
+                description      = null
+                from_port        = 0
+                ipv6_cidr_blocks = [
+                    "::/0",
+                ]
+                prefix_list_ids  = []
+                protocol         = "-1"
+                security_groups  = []
+                self             = false
+                to_port          = 0
+            },
+        ]
+        id          = "sg-00cb44156dffb09ec"
+        ingress     = [
+            {
+                cidr_blocks      = [
+                    "0.0.0.0/0",
+                ]
+                description      = "HTTP"
+                from_port        = 80
+                ipv6_cidr_blocks = []
+                prefix_list_ids  = []
+                protocol         = "tcp"
+                security_groups  = []
+                self             = false
+                to_port          = 80
+            },
+            {
+                cidr_blocks      = [
+                    "174.112.99.39/32",
+                ]
+                description      = "SSH"
+                from_port        = 22
+                ipv6_cidr_blocks = []
+                prefix_list_ids  = []
+                protocol         = "tcp"
+                security_groups  = []
+                self             = false
+                to_port          = 22
+            },
+        ]
+        name        = "sg_my_server"
+        name_prefix = null
+        owner_id    = "795693417330"
+        region      = "us-east-1"
+        tags        = {}
+        tags_all    = {}
+        vpc_id      = "vpc-816043fb"
+    }
+
+Plan: 2 to import, 1 to add, 0 to change, 1 to destroy.
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply"
+now.
+
+-----
+
+%terraform apply --auto-approve
+module.apache-instance.aws_key_pair.deployer: Preparing import... [id=deployer-key]
+module.apache-instance.data.aws_vpc.default_vpc: Reading...
+module.apache-instance.data.aws_ami.east-amazon-linux-2: Reading...
+module.apache-instance.aws_key_pair.deployer: Refreshing state... [id=deployer-key]
+module.apache-instance.data.aws_ami.east-amazon-linux-2: Read complete after 0s [id=ami-0199fa5fada510433]
+module.apache-instance.data.aws_vpc.default_vpc: Read complete after 0s [id=vpc-816043fb]
+module.apache-instance.aws_security_group.sg_my_server: Preparing import... [id=sg-00cb44156dffb09ec]
+module.apache-instance.aws_security_group.sg_my_server: Refreshing state... [id=sg-00cb44156dffb09ec]
+module.apache-instance.aws_instance.my_server: Refreshing state... [id=i-0dee2b360e22d3135]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+-/+ destroy and then create replacement
+
+Terraform will perform the following actions:
+
+  # module.apache-instance.aws_key_pair.deployer must be replaced
+  # (imported from "deployer-key")
+  # Warning: this will destroy the imported resource
+-/+ resource "aws_key_pair" "deployer" {
+      ~ arn             = "arn:aws:ec2:us-east-1:795693417330:key-pair/deployer-key" -> (known after apply)
+      ~ fingerprint     = "1qNaoBP+eIlWCA8oJoZmWPKq4NIg3MWmlxqetAsE9Gw=" -> (known after apply)
+      ~ id              = "deployer-key" -> (known after apply)
+        key_name        = "deployer-key"
+      + key_name_prefix = (known after apply)
+      ~ key_pair_id     = "key-00657a3d697d6a349" -> (known after apply)
+      ~ key_type        = "ed25519" -> (known after apply)
+      + public_key      = (sensitive value) # forces replacement
+        region          = "us-east-1"
+      - tags            = {} -> null
+      ~ tags_all        = {} -> (known after apply)
+    }
+
+  # module.apache-instance.aws_security_group.sg_my_server will be imported
+    resource "aws_security_group" "sg_my_server" {
+        arn         = "arn:aws:ec2:us-east-1:795693417330:security-group/sg-00cb44156dffb09ec"
+        description = "My Server Security Group"
+        egress      = [
+            {
+                cidr_blocks      = [
+                    "0.0.0.0/0",
+                ]
+                description      = null
+                from_port        = 0
+                ipv6_cidr_blocks = [
+                    "::/0",
+                ]
+                prefix_list_ids  = []
+                protocol         = "-1"
+                security_groups  = []
+                self             = false
+                to_port          = 0
+            },
+        ]
+        id          = "sg-00cb44156dffb09ec"
+        ingress     = [
+            {
+                cidr_blocks      = [
+                    "0.0.0.0/0",
+                ]
+                description      = "HTTP"
+                from_port        = 80
+                ipv6_cidr_blocks = []
+                prefix_list_ids  = []
+                protocol         = "tcp"
+                security_groups  = []
+                self             = false
+                to_port          = 80
+            },
+            {
+                cidr_blocks      = [
+                    "174.112.99.39/32",
+                ]
+                description      = "SSH"
+                from_port        = 22
+                ipv6_cidr_blocks = []
+                prefix_list_ids  = []
+                protocol         = "tcp"
+                security_groups  = []
+                self             = false
+                to_port          = 22
+            },
+        ]
+        name        = "sg_my_server"
+        name_prefix = null
+        owner_id    = "795693417330"
+        region      = "us-east-1"
+        tags        = {}
+        tags_all    = {}
+        vpc_id      = "vpc-816043fb"
+    }
+
+Plan: 2 to import, 1 to add, 0 to change, 1 to destroy.
+module.apache-instance.aws_key_pair.deployer: Importing... [id=deployer-key]
+module.apache-instance.aws_key_pair.deployer: Import complete [id=deployer-key]
+module.apache-instance.aws_security_group.sg_my_server: Importing... [id=sg-00cb44156dffb09ec]
+module.apache-instance.aws_security_group.sg_my_server: Import complete [id=sg-00cb44156dffb09ec]
+module.apache-instance.aws_key_pair.deployer: Destroying... [id=deployer-key]
+module.apache-instance.aws_key_pair.deployer: Destruction complete after 0s
+module.apache-instance.aws_key_pair.deployer: Creating...
+module.apache-instance.aws_key_pair.deployer: Creation complete after 0s [id=deployer-key]
+
+Apply complete! Resources: 2 imported, 1 added, 0 changed, 1 destroyed.
+
+Outputs:
+
+public_ip = "100.54.209.139"

@@ -1,0 +1,90 @@
+% terraform state list
+data.aws_vpc.default_vpc
+data.template_file.user_data
+aws_instance.my_server
+aws_key_pair.deployer
+aws_security_group.sg_my_server
+
+------
+% terraform state show aws_instance.my_server
+# aws_instance.my_server:
+resource "aws_instance" "my_server" {
+    ami                                  = "ami-001089eb624938d9f"
+    arn                                  = "arn:aws:ec2:us-east-2:795693417330:instance/i-09a68a03156d8a7e3"
+    associate_public_ip_address          = true
+    availability_zone                    = "us-east-2b"
+    cpu_core_count                       = 1
+    cpu_threads_per_core                 = 1
+    disable_api_termination              = false
+    ebs_optimized                        = false
+    get_password_data                    = false
+    hibernation                          = false
+    id                                   = "i-09a68a03156d8a7e3"
+    instance_initiated_shutdown_behavior = "stop"
+    instance_state                       = "running"
+    instance_type                        = "t2.micro"
+    ipv6_address_count                   = 0
+    ipv6_addresses                       = []
+    key_name                             = "deployer-key"
+    monitoring                           = false
+    primary_network_interface_id         = "eni-031dc04b98d695eac"
+    private_dns                          = "ip-172-31-19-45.us-east-2.compute.internal"
+    private_ip                           = "172.31.19.45"
+    public_dns                           = "ec2-3-142-146-165.us-east-2.compute.amazonaws.com"
+    public_ip                            = "3.142.146.165"
+    secondary_private_ips                = []
+    security_groups                      = [
+        "sg_my_server",
+    ]
+    source_dest_check                    = true
+    subnet_id                            = "subnet-d6a184ac"
+    tags                                 = {
+        "Name" = "MyServer"
+    }
+    tags_all                             = {
+        "Name" = "MyServer"
+    }
+    tenancy                              = "default"
+    user_data                            = "107b64a191b283be7f8304bcbeb1a107d2560a17"
+    vpc_security_group_ids               = [
+        "sg-0cc2b286e78bceb63",
+    ]
+
+    capacity_reservation_specification {
+        capacity_reservation_preference = "open"
+    }
+
+    credit_specification {
+        cpu_credits = "standard"
+    }
+
+    enclave_options {
+        enabled = false
+    }
+
+    metadata_options {
+        http_endpoint               = "enabled"
+        http_put_response_hop_limit = 1
+        http_tokens                 = "optional"
+        instance_metadata_tags      = "disabled"
+    }
+
+    root_block_device {
+        delete_on_termination = true
+        device_name           = "/dev/xvda"
+        encrypted             = false
+        iops                  = 100
+        tags                  = {}
+        throughput            = 0
+        volume_id             = "vol-0547e6b9cf90371e3"
+        volume_size           = 8
+        volume_type           = "gp2"
+    }
+}
+
+-------------
+
+% terraform state mv aws_instance.my_server aws_instance.our_server
+Move "aws_instance.my_server" to "aws_instance.our_server"
+Successfully moved 1 object(s).
+

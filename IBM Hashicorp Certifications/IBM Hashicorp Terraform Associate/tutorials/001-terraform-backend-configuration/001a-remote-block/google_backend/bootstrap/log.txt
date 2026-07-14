@@ -1,0 +1,1396 @@
+2024-03-29T16:35:07.665-0400 [INFO]  Terraform version: 1.7.5
+2024-03-29T16:35:07.666-0400 [DEBUG] using github.com/hashicorp/go-tfe v1.41.0
+2024-03-29T16:35:07.666-0400 [DEBUG] using github.com/hashicorp/hcl/v2 v2.19.1
+2024-03-29T16:35:07.666-0400 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2024-03-29T16:35:07.666-0400 [DEBUG] using github.com/zclconf/go-cty v1.14.1
+2024-03-29T16:35:07.666-0400 [INFO]  Go runtime version: go1.21.8
+2024-03-29T16:35:07.666-0400 [INFO]  CLI args: []string{"terraform", "init"}
+2024-03-29T16:35:07.666-0400 [DEBUG] Attempting to open CLI config file: /Users/davidtessier/.terraformrc
+2024-03-29T16:35:07.666-0400 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2024-03-29T16:35:07.666-0400 [INFO]  Loading CLI configuration from /Users/davidtessier/.terraform.d/credentials.tfrc.json
+2024-03-29T16:35:07.667-0400 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2024-03-29T16:35:07.667-0400 [DEBUG] ignoring non-existing provider search directory /Users/davidtessier/.terraform.d/plugins
+2024-03-29T16:35:07.667-0400 [DEBUG] ignoring non-existing provider search directory /Users/davidtessier/Library/Application Support/io.terraform/plugins
+2024-03-29T16:35:07.667-0400 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2024-03-29T16:35:07.667-0400 [INFO]  CLI command args: []string{"init"}
+2024-03-29T16:35:07.668-0400 [DEBUG] New state was assigned lineage "9dc8d92f-b9a1-2ee9-dcf9-abfdf8fdb2e7"
+2024-03-29T16:35:07.668-0400 [DEBUG] checking for provisioner in "."
+2024-03-29T16:35:07.676-0400 [DEBUG] checking for provisioner in "/opt/homebrew/bin"
+2024-03-29T16:35:07.677-0400 [DEBUG] Service discovery for registry.terraform.io at https://registry.terraform.io/.well-known/terraform.json
+2024-03-29T16:35:09.189-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/google/versions
+2024-03-29T16:35:09.664-0400 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/google/5.22.0/download/darwin/arm64
+2024-03-29T16:35:10.115-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-google/5.22.0/terraform-provider-google_5.22.0_SHA256SUMS
+2024-03-29T16:35:10.690-0400 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-google/5.22.0/terraform-provider-google_5.22.0_SHA256SUMS.72D7468F.sig
+2024-03-29T16:35:12.889-0400 [DEBUG] Provider signed by 34365D9472D7468F HashiCorp Security (hashicorp.com/security) <security@hashicorp.com>
+2024-03-29T16:35:18.545-0400 [INFO]  Terraform version: 1.7.5
+2024-03-29T16:35:18.545-0400 [DEBUG] using github.com/hashicorp/go-tfe v1.41.0
+2024-03-29T16:35:18.545-0400 [DEBUG] using github.com/hashicorp/hcl/v2 v2.19.1
+2024-03-29T16:35:18.545-0400 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2024-03-29T16:35:18.545-0400 [DEBUG] using github.com/zclconf/go-cty v1.14.1
+2024-03-29T16:35:18.545-0400 [INFO]  Go runtime version: go1.21.8
+2024-03-29T16:35:18.545-0400 [INFO]  CLI args: []string{"terraform", "plan"}
+2024-03-29T16:35:18.545-0400 [DEBUG] Attempting to open CLI config file: /Users/davidtessier/.terraformrc
+2024-03-29T16:35:18.545-0400 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2024-03-29T16:35:18.546-0400 [INFO]  Loading CLI configuration from /Users/davidtessier/.terraform.d/credentials.tfrc.json
+2024-03-29T16:35:18.546-0400 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2024-03-29T16:35:18.546-0400 [DEBUG] ignoring non-existing provider search directory /Users/davidtessier/.terraform.d/plugins
+2024-03-29T16:35:18.546-0400 [DEBUG] ignoring non-existing provider search directory /Users/davidtessier/Library/Application Support/io.terraform/plugins
+2024-03-29T16:35:18.546-0400 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2024-03-29T16:35:18.546-0400 [INFO]  CLI command args: []string{"plan"}
+2024-03-29T16:35:18.546-0400 [DEBUG] New state was assigned lineage "a179d9c8-b556-a6e1-e888-4ced4e0c5664"
+2024-03-29T16:35:18.605-0400 [DEBUG] checking for provisioner in "."
+2024-03-29T16:35:18.608-0400 [DEBUG] checking for provisioner in "/opt/homebrew/bin"
+2024-03-29T16:35:18.608-0400 [INFO]  backend/local: starting Plan operation
+2024-03-29T16:35:18.609-0400 [DEBUG] backend/local: will prompt for input of unset required variables [billing_account]
+2024-03-29T16:35:18.609-0400 [DEBUG] command: asking for input: "var.billing_account"
+2024-03-29T16:35:47.360-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:35:47.360-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:35:47.376-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:35:47.388-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63399
+2024-03-29T16:35:47.388-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:35:48.487-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:35:48.486-0400
+2024-03-29T16:35:48.493-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin4196501864 network=unix timestamp=2024-03-29T16:35:48.493-0400
+2024-03-29T16:35:48.493-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:35:48.575-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:35:48.577-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63399
+2024-03-29T16:35:48.577-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:35:48.577-0400 [DEBUG] Building and walking validate graph
+2024-03-29T16:35:48.577-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:35:48.577-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:35:48.577-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:35:48.577-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state" references: [var.billing_account]
+2024-03-29T16:35:48.577-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: [google_project.terraform_state]
+2024-03-29T16:35:48.577-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:35:48.577-0400 [DEBUG] Starting graph walk: walkValidate
+2024-03-29T16:35:48.577-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:35:48.577-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:35:48.580-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:35:48.583-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63400
+2024-03-29T16:35:48.584-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:35:48.607-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:35:48.607-0400
+2024-03-29T16:35:48.613-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: network=unix address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin3285043273 timestamp=2024-03-29T16:35:48.613-0400
+2024-03-29T16:35:48.613-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:35:48.636-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:35:48.637-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63400
+2024-03-29T16:35:48.637-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:35:48.637-0400 [INFO]  backend/local: plan calling Plan
+2024-03-29T16:35:48.637-0400 [DEBUG] Building and walking plan graph for NormalMode
+2024-03-29T16:35:48.637-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:35:48.637-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:35:48.637-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state (expand)" references: [var.billing_account]
+2024-03-29T16:35:48.637-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state (expand)" references: [google_project.terraform_state (expand)]
+2024-03-29T16:35:48.637-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:35:48.637-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:35:48.637-0400 [DEBUG] Starting graph walk: walkPlan
+2024-03-29T16:35:48.637-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:35:48.637-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:35:48.640-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:35:48.643-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63401
+2024-03-29T16:35:48.643-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:35:48.666-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:35:48.666-0400
+2024-03-29T16:35:48.673-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:35:48.673-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin319477291 network=unix timestamp=2024-03-29T16:35:48.673-0400
+2024-03-29T16:35:48.693-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 tf_rpc=ConfigureProvider @module=google tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=1c1d8f06-ec59-36eb-101c-7d18de591d32 timestamp=2024-03-29T16:35:48.693-0400
+2024-03-29T16:35:48.693-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 tf_mux_provider="*proto5server.Server" tf_rpc=ConfigureProvider @module=google tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=1c1d8f06-ec59-36eb-101c-7d18de591d32 timestamp=2024-03-29T16:35:48.693-0400
+2024-03-29T16:35:48.693-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: tf_mux_provider="*proto5server.Server" tf_req_id=1c1d8f06-ec59-36eb-101c-7d18de591d32 tf_provider_addr=registry.terraform.io/hashicorp/google tf_rpc=ConfigureProvider @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 @module=google timestamp=2024-03-29T16:35:48.693-0400
+2024-03-29T16:35:48.693-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: tf_provider_addr=registry.terraform.io/hashicorp/google tf_mux_provider="*proto5server.Server" tf_req_id=1c1d8f06-ec59-36eb-101c-7d18de591d32 tf_rpc=ConfigureProvider @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 @module=google timestamp=2024-03-29T16:35:48.693-0400
+2024-03-29T16:35:48.693-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:48 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:35:50.067-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Terraform is using this identity: david.d.tessier@gmail.com: tf_mux_provider="*proto5server.Server" tf_rpc=ConfigureProvider @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1641 @module=google tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=1c1d8f06-ec59-36eb-101c-7d18de591d32 timestamp=2024-03-29T16:35:50.067-0400
+2024-03-29T16:35:50.079-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:50 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:35:50.080-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:50 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:35:50.080-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:50 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:35:50.080-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:50 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:35:50.080-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:50 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:35:50.378-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:50 [INFO] Terraform is using this identity: david.d.tessier@gmail.com
+2024-03-29T16:35:50.379-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:50 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:35:50.379-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:50 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:35:50.379-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:50 [DEBUG] Stopping batcher "IAM"
+2024-03-29T16:35:50.379-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:50 [DEBUG] Stopping batcher "Service Usage"
+2024-03-29T16:35:50.380-0400 [DEBUG] Resource instance state not found for node "google_project.terraform_state", instance google_project.terraform_state
+2024-03-29T16:35:50.380-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state" references: []
+2024-03-29T16:35:50.381-0400 [DEBUG] refresh: google_project.terraform_state: no state, so not refreshing
+2024-03-29T16:35:50.388-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_project.terraform_state, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .auto_create_network: planned value cty.True for a non-computed attribute
+2024-03-29T16:35:50.388-0400 [DEBUG] Resource instance state not found for node "google_storage_bucket.terraform_state", instance google_storage_bucket.terraform_state
+2024-03-29T16:35:50.389-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: []
+2024-03-29T16:35:50.389-0400 [DEBUG] refresh: google_storage_bucket.terraform_state: no state, so not refreshing
+2024-03-29T16:35:50.394-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_storage_bucket.terraform_state, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .storage_class: planned value cty.StringVal("STANDARD") for a non-computed attribute
+      - .location: planned value cty.StringVal("US-EAST1") does not match config value cty.StringVal("us-east1")
+      - .force_destroy: planned value cty.False for a non-computed attribute
+      - .soft_delete_policy: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .versioning: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .website: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-03-29T16:35:50.395-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:50 [DEBUG] [transport] [server-transport 0x14000c2ad00] Closing: Server.Stop called 
+2024-03-29T16:35:50.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:35:50 [DEBUG] [transport] [server-transport 0x14000c2ad00] loopyWriter exiting with error: transport closed by client 
+2024-03-29T16:35:50.396-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:35:50.399-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63401
+2024-03-29T16:35:50.399-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:35:50.400-0400 [DEBUG] building apply graph to check for errors
+2024-03-29T16:35:50.400-0400 [DEBUG] Resource state not found for node "google_project.terraform_state", instance google_project.terraform_state
+2024-03-29T16:35:50.400-0400 [DEBUG] Resource state not found for node "google_storage_bucket.terraform_state", instance google_storage_bucket.terraform_state
+2024-03-29T16:35:50.400-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:35:50.400-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:35:50.400-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:35:50.400-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:35:50.400-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state (expand)" references: [var.billing_account]
+2024-03-29T16:35:50.400-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state (expand)" references: [google_project.terraform_state (expand) google_project.terraform_state google_project.terraform_state]
+2024-03-29T16:35:50.400-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:35:50.400-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state" references: [var.billing_account]
+2024-03-29T16:35:50.400-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: [google_project.terraform_state (expand) google_project.terraform_state google_project.terraform_state]
+2024-03-29T16:35:50.401-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:35:50.401-0400 [INFO]  backend/local: plan operation completed
+2024-03-29T16:36:00.011-0400 [INFO]  Terraform version: 1.7.5
+2024-03-29T16:36:00.011-0400 [DEBUG] using github.com/hashicorp/go-tfe v1.41.0
+2024-03-29T16:36:00.011-0400 [DEBUG] using github.com/hashicorp/hcl/v2 v2.19.1
+2024-03-29T16:36:00.011-0400 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2024-03-29T16:36:00.011-0400 [DEBUG] using github.com/zclconf/go-cty v1.14.1
+2024-03-29T16:36:00.011-0400 [INFO]  Go runtime version: go1.21.8
+2024-03-29T16:36:00.011-0400 [INFO]  CLI args: []string{"terraform", "apply", "--auto-approve"}
+2024-03-29T16:36:00.011-0400 [DEBUG] Attempting to open CLI config file: /Users/davidtessier/.terraformrc
+2024-03-29T16:36:00.011-0400 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2024-03-29T16:36:00.011-0400 [INFO]  Loading CLI configuration from /Users/davidtessier/.terraform.d/credentials.tfrc.json
+2024-03-29T16:36:00.012-0400 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2024-03-29T16:36:00.012-0400 [DEBUG] ignoring non-existing provider search directory /Users/davidtessier/.terraform.d/plugins
+2024-03-29T16:36:00.012-0400 [DEBUG] ignoring non-existing provider search directory /Users/davidtessier/Library/Application Support/io.terraform/plugins
+2024-03-29T16:36:00.012-0400 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2024-03-29T16:36:00.012-0400 [INFO]  CLI command args: []string{"apply", "--auto-approve"}
+2024-03-29T16:36:00.012-0400 [DEBUG] New state was assigned lineage "10c66b13-a3db-3367-49d4-74510b65b9f7"
+2024-03-29T16:36:00.071-0400 [DEBUG] checking for provisioner in "."
+2024-03-29T16:36:00.073-0400 [DEBUG] checking for provisioner in "/opt/homebrew/bin"
+2024-03-29T16:36:00.074-0400 [INFO]  backend/local: starting Apply operation
+2024-03-29T16:36:00.074-0400 [DEBUG] backend/local: will prompt for input of unset required variables [billing_account]
+2024-03-29T16:36:00.074-0400 [DEBUG] command: asking for input: "var.billing_account"
+2024-03-29T16:36:01.532-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:36:01.532-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:36:01.549-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:36:01.560-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63469
+2024-03-29T16:36:01.560-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:01.592-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:36:01.592-0400
+2024-03-29T16:36:01.599-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:36:01.599-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin2657961029 network=unix timestamp=2024-03-29T16:36:01.599-0400
+2024-03-29T16:36:01.679-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:36:01.680-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63469
+2024-03-29T16:36:01.680-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:36:01.680-0400 [DEBUG] Building and walking validate graph
+2024-03-29T16:36:01.680-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:36:01.680-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:36:01.680-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state" references: [var.billing_account]
+2024-03-29T16:36:01.680-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: [google_project.terraform_state]
+2024-03-29T16:36:01.680-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:36:01.680-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:36:01.681-0400 [DEBUG] Starting graph walk: walkValidate
+2024-03-29T16:36:01.681-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:36:01.681-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:36:01.683-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:36:01.687-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63470
+2024-03-29T16:36:01.687-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:01.710-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:36:01.710-0400
+2024-03-29T16:36:01.716-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:36:01.716-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin690629786 network=unix timestamp=2024-03-29T16:36:01.716-0400
+2024-03-29T16:36:01.738-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:36:01.739-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63470
+2024-03-29T16:36:01.739-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:36:01.739-0400 [INFO]  backend/local: apply calling Plan
+2024-03-29T16:36:01.739-0400 [DEBUG] Building and walking plan graph for NormalMode
+2024-03-29T16:36:01.739-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:36:01.739-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:36:01.739-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:36:01.739-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:36:01.739-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state (expand)" references: [var.billing_account]
+2024-03-29T16:36:01.739-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state (expand)" references: [google_project.terraform_state (expand)]
+2024-03-29T16:36:01.740-0400 [DEBUG] Starting graph walk: walkPlan
+2024-03-29T16:36:01.740-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:36:01.740-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:36:01.742-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:36:01.746-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63471
+2024-03-29T16:36:01.746-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:01.769-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:36:01.769-0400
+2024-03-29T16:36:01.775-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin3498973382 network=unix timestamp=2024-03-29T16:36:01.775-0400
+2024-03-29T16:36:01.775-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:36:01.796-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: tf_rpc=ConfigureProvider @module=google tf_req_id=aa4a662b-0a58-721f-58a3-3271b547a204 tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 timestamp=2024-03-29T16:36:01.796-0400
+2024-03-29T16:36:01.796-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 tf_req_id=aa4a662b-0a58-721f-58a3-3271b547a204 tf_rpc=ConfigureProvider @module=google tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google timestamp=2024-03-29T16:36:01.796-0400
+2024-03-29T16:36:01.796-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=aa4a662b-0a58-721f-58a3-3271b547a204 tf_rpc=ConfigureProvider @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 @module=google tf_mux_provider="*proto5server.Server" timestamp=2024-03-29T16:36:01.796-0400
+2024-03-29T16:36:01.796-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google @module=google @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 tf_req_id=aa4a662b-0a58-721f-58a3-3271b547a204 tf_rpc=ConfigureProvider timestamp=2024-03-29T16:36:01.796-0400
+2024-03-29T16:36:01.796-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:01 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:36:02.657-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Terraform is using this identity: david.d.tessier@gmail.com: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1641 @module=google tf_req_id=aa4a662b-0a58-721f-58a3-3271b547a204 tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_rpc=ConfigureProvider timestamp=2024-03-29T16:36:02.657-0400
+2024-03-29T16:36:02.662-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:02 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:36:02.662-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:02 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:36:02.662-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:02 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:36:02.662-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:02 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:36:02.662-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:02 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:36:02.947-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:02 [INFO] Terraform is using this identity: david.d.tessier@gmail.com
+2024-03-29T16:36:02.948-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:02 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:36:02.948-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:02 [DEBUG] Stopping batcher "Service Usage"
+2024-03-29T16:36:02.948-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:02 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:36:02.948-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:02 [DEBUG] Stopping batcher "IAM"
+2024-03-29T16:36:02.950-0400 [DEBUG] Resource instance state not found for node "google_project.terraform_state", instance google_project.terraform_state
+2024-03-29T16:36:02.950-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state" references: []
+2024-03-29T16:36:02.951-0400 [DEBUG] refresh: google_project.terraform_state: no state, so not refreshing
+2024-03-29T16:36:02.958-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_project.terraform_state, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .auto_create_network: planned value cty.True for a non-computed attribute
+2024-03-29T16:36:02.958-0400 [DEBUG] Resource instance state not found for node "google_storage_bucket.terraform_state", instance google_storage_bucket.terraform_state
+2024-03-29T16:36:02.958-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: []
+2024-03-29T16:36:02.959-0400 [DEBUG] refresh: google_storage_bucket.terraform_state: no state, so not refreshing
+2024-03-29T16:36:02.965-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_storage_bucket.terraform_state, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .force_destroy: planned value cty.False for a non-computed attribute
+      - .location: planned value cty.StringVal("US-EAST1") does not match config value cty.StringVal("us-east1")
+      - .storage_class: planned value cty.StringVal("STANDARD") for a non-computed attribute
+      - .website: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .versioning: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .soft_delete_policy: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-03-29T16:36:02.966-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:02 [DEBUG] [transport] [server-transport 0x1400088b860] Closing: Server.Stop called 
+2024-03-29T16:36:02.966-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:02 [DEBUG] [transport] [server-transport 0x1400088b860] loopyWriter exiting with error: transport closed by client 
+2024-03-29T16:36:02.966-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:36:02.969-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63471
+2024-03-29T16:36:02.970-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:36:02.970-0400 [DEBUG] building apply graph to check for errors
+2024-03-29T16:36:02.970-0400 [DEBUG] Resource state not found for node "google_project.terraform_state", instance google_project.terraform_state
+2024-03-29T16:36:02.970-0400 [DEBUG] Resource state not found for node "google_storage_bucket.terraform_state", instance google_storage_bucket.terraform_state
+2024-03-29T16:36:02.970-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:36:02.970-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:36:02.970-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:36:02.970-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:36:02.970-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: [google_project.terraform_state (expand) google_project.terraform_state google_project.terraform_state]
+2024-03-29T16:36:02.971-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:36:02.971-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state (expand)" references: [var.billing_account]
+2024-03-29T16:36:02.971-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state (expand)" references: [google_project.terraform_state (expand) google_project.terraform_state google_project.terraform_state]
+2024-03-29T16:36:02.971-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:36:02.971-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state" references: [var.billing_account]
+2024-03-29T16:36:02.985-0400 [INFO]  backend/local: apply calling Apply
+2024-03-29T16:36:02.985-0400 [DEBUG] Building and walking apply graph for NormalMode plan
+2024-03-29T16:36:02.985-0400 [DEBUG] Resource state not found for node "google_project.terraform_state", instance google_project.terraform_state
+2024-03-29T16:36:02.985-0400 [DEBUG] Resource state not found for node "google_storage_bucket.terraform_state", instance google_storage_bucket.terraform_state
+2024-03-29T16:36:02.985-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:36:02.985-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:36:02.985-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:36:02.985-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:36:02.986-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: [google_project.terraform_state (expand) google_project.terraform_state google_project.terraform_state]
+2024-03-29T16:36:02.986-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:36:02.986-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state (expand)" references: [google_project.terraform_state (expand) google_project.terraform_state google_project.terraform_state]
+2024-03-29T16:36:02.986-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state (expand)" references: [var.billing_account]
+2024-03-29T16:36:02.986-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:36:02.986-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state" references: [var.billing_account]
+2024-03-29T16:36:02.986-0400 [DEBUG] Starting graph walk: walkApply
+2024-03-29T16:36:02.986-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:36:02.986-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:36:02.990-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:36:02.994-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63483
+2024-03-29T16:36:02.994-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:03.022-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:36:03.022-0400
+2024-03-29T16:36:03.028-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:36:03.028-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: network=unix address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin3632536184 timestamp=2024-03-29T16:36:03.028-0400
+2024-03-29T16:36:03.050-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 tf_provider_addr=registry.terraform.io/hashicorp/google @module=google tf_mux_provider="*proto5server.Server" tf_req_id=de643fa0-7d6d-250f-08ac-f0c9b3fd4cd1 tf_rpc=ConfigureProvider timestamp=2024-03-29T16:36:03.050-0400
+2024-03-29T16:36:03.050-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: tf_req_id=de643fa0-7d6d-250f-08ac-f0c9b3fd4cd1 @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 @module=google tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_rpc=ConfigureProvider timestamp=2024-03-29T16:36:03.050-0400
+2024-03-29T16:36:03.050-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=de643fa0-7d6d-250f-08ac-f0c9b3fd4cd1 tf_rpc=ConfigureProvider @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 @module=google timestamp=2024-03-29T16:36:03.050-0400
+2024-03-29T16:36:03.050-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: tf_req_id=de643fa0-7d6d-250f-08ac-f0c9b3fd4cd1 @module=google tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 tf_rpc=ConfigureProvider timestamp=2024-03-29T16:36:03.050-0400
+2024-03-29T16:36:03.050-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:03 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:36:04.003-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Terraform is using this identity: david.d.tessier@gmail.com: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1641 @module=google tf_provider_addr=registry.terraform.io/hashicorp/google tf_mux_provider="*proto5server.Server" tf_req_id=de643fa0-7d6d-250f-08ac-f0c9b3fd4cd1 tf_rpc=ConfigureProvider timestamp=2024-03-29T16:36:04.003-0400
+2024-03-29T16:36:04.005-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:36:04.005-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:36:04.005-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:36:04.005-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:36:04.006-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:36:04.300-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [INFO] Terraform is using this identity: david.d.tessier@gmail.com
+2024-03-29T16:36:04.301-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:36:04.301-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [DEBUG] Stopping batcher "Service Usage"
+2024-03-29T16:36:04.301-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:36:04.301-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [DEBUG] Stopping batcher "IAM"
+2024-03-29T16:36:04.309-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_project.terraform_state, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .auto_create_network: planned value cty.True for a non-computed attribute
+2024-03-29T16:36:04.310-0400 [INFO]  Starting apply for google_project.terraform_state
+2024-03-29T16:36:04.310-0400 [DEBUG] google_project.terraform_state: applying the planned Create change
+2024-03-29T16:36:04.311-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [DEBUG] setting computed for "effective_labels" from ComputedKeys
+2024-03-29T16:36:04.311-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [DEBUG] setting computed for "terraform_labels" from ComputedKeys
+2024-03-29T16:36:04.311-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [INFO] Instantiating Google Cloud Billing client for path https://cloudbilling.googleapis.com/
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:04 [DEBUG] Google API Request Details:
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: POST /v1/billingAccounts/014C05-027CFB-2E6FD6:testIamPermissions?alt=json&prettyPrint=false HTTP/1.1
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: cloudbilling.googleapis.com
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Length: 56
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "permissions": [
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "billing.resourceAssociations.create"
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  ]
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:04.312-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:05.731-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:05 [DEBUG] Google API Response Details:
+2024-03-29T16:36:05.731-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:36:05.731-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 200 OK
+2024-03-29T16:36:05.731-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:36:05.731-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: private
+2024-03-29T16:36:05.731-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:36:05 GMT
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: ESF
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Referer
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Content-Type-Options: nosniff
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Frame-Options: SAMEORIGIN
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Xss-Protection: 0
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "permissions": [
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "billing.resourceAssociations.create"
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  ]
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:05 [DEBUG] Retry Transport: Stopping retries, last request was successful
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:05 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:05 [DEBUG]: Creating new project "prg-tf-state"
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:05 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:36:05.732-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:05 [INFO] Instantiating Google Cloud ResourceManager client for path https://cloudresourcemanager.googleapis.com/
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:05 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:05 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:05 [DEBUG] Google API Request Details:
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: POST /v1/projects?alt=json&prettyPrint=false HTTP/1.1
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: cloudresourcemanager.googleapis.com
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Length: 62
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "Terraform State Project",
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "projectId": "prg-tf-state"
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:05.733-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:07 [DEBUG] Google API Response Details:
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 200 OK
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: private
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:36:07 GMT
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: ESF
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server-Timing: gfet4t7; dur=791
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Referer
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Content-Type-Options: nosniff
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Frame-Options: SAMEORIGIN
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Xss-Protection: 0
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "operations/cp.5708443689097621578"
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:07 [DEBUG] Retry Transport: Stopping retries, last request was successful
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:07 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:07 [DEBUG] Waiting for state to become: [done: true]
+2024-03-29T16:36:07.087-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:07 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:36:07.088-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:07 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:36:07.088-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:07 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:36:07.088-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:07 [DEBUG] Google API Request Details:
+2024-03-29T16:36:07.088-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:36:07.088-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: GET /v1/operations/cp.5708443689097621578?alt=json HTTP/1.1
+2024-03-29T16:36:07.088-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: cloudresourcemanager.googleapis.com
+2024-03-29T16:36:07.088-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:36:07.088-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json
+2024-03-29T16:36:07.088-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:36:07.088-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:07.088-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:07.088-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:08 [DEBUG] Google API Response Details:
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 200 OK
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: private
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:36:08 GMT
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: ESF
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server-Timing: gfet4t7; dur=808
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Referer
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Content-Type-Options: nosniff
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Frame-Options: SAMEORIGIN
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Xss-Protection: 0
+2024-03-29T16:36:08.039-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:08.040-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:08.040-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "name": "operations/cp.5708443689097621578"
+2024-03-29T16:36:08.040-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:08.040-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:08.040-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:08.040-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:08 [DEBUG] Retry Transport: Stopping retries, last request was successful
+2024-03-29T16:36:08.040-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:08 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:36:08.040-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:08 [DEBUG] Got done: false while polling for operation operations/cp.5708443689097621578's status
+2024-03-29T16:36:08.040-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:08 [TRACE] Waiting 10s before next try
+2024-03-29T16:36:18.041-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:36:18.041-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:36:18.041-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:36:18.041-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [DEBUG] Google API Request Details:
+2024-03-29T16:36:18.041-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:36:18.042-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: GET /v1/operations/cp.5708443689097621578?alt=json HTTP/1.1
+2024-03-29T16:36:18.042-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: cloudresourcemanager.googleapis.com
+2024-03-29T16:36:18.042-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:36:18.042-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json
+2024-03-29T16:36:18.042-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:36:18.042-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:18.042-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:18.042-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:18.644-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [DEBUG] Google API Response Details:
+2024-03-29T16:36:18.644-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:36:18.644-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 200 OK
+2024-03-29T16:36:18.644-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:36:18.644-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: private
+2024-03-29T16:36:18.644-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:36:18 GMT
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: ESF
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server-Timing: gfet4t7; dur=418
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Referer
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Content-Type-Options: nosniff
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Frame-Options: SAMEORIGIN
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Xss-Protection: 0
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "name": "operations/cp.5708443689097621578",
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "metadata": {
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "@type": "type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus",
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "gettable": true,
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "ready": true
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   },
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "done": true,
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "response": {
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "@type": "type.googleapis.com/google.cloudresourcemanager.v1.Project",
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "projectNumber": "616833066598",
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "projectId": "prg-tf-state",
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "lifecycleState": "ACTIVE",
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "name": "Terraform State Project",
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "createTime": "2024-03-29T20:36:09.072601Z"
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   }
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [DEBUG] Retry Transport: Stopping retries, last request was successful
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [DEBUG] Got done: true while polling for operation operations/cp.5708443689097621578's status
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [INFO] Instantiating Google Cloud Billing client for path https://cloudbilling.googleapis.com/
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:18 [DEBUG] Google API Request Details:
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: PUT /v1/projects/prg-tf-state/billingInfo?alt=json&prettyPrint=false HTTP/1.1
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: cloudbilling.googleapis.com
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Length: 62
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:36:18.645-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:36:18.646-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:18.646-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:18.646-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "billingAccountName": "billingAccounts/014C05-027CFB-2E6FD6"
+2024-03-29T16:36:18.646-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:18.646-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:18.646-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:20.620-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:20 [DEBUG] Google API Response Details:
+2024-03-29T16:36:20.620-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:36:20.620-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 200 OK
+2024-03-29T16:36:20.620-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:36:20.620-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: private
+2024-03-29T16:36:20.620-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:36:20.620-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:36:20 GMT
+2024-03-29T16:36:20.620-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: ESF
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Referer
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Content-Type-Options: nosniff
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Frame-Options: SAMEORIGIN
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Xss-Protection: 0
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "projects/prg-tf-state/billingInfo",
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "projectId": "prg-tf-state",
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "billingAccountName": "billingAccounts/014C05-027CFB-2E6FD6",
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "billingEnabled": true
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:20 [DEBUG] Retry Transport: Stopping retries, last request was successful
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:20 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:20 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:20 [INFO] Instantiating Google Cloud Billing client for path https://cloudbilling.googleapis.com/
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:20 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:20 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:20 [DEBUG] Google API Request Details:
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: GET /v1/projects/prg-tf-state/billingInfo?alt=json&prettyPrint=false HTTP/1.1
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: cloudbilling.googleapis.com
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:20.621-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:21 [DEBUG] Google API Response Details:
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 200 OK
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: private
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:36:21 GMT
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: ESF
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Referer
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Content-Type-Options: nosniff
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Frame-Options: SAMEORIGIN
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Xss-Protection: 0
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "projects/prg-tf-state/billingInfo",
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "projectId": "prg-tf-state",
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "billingAccountName": "billingAccounts/014C05-027CFB-2E6FD6",
+2024-03-29T16:36:21.725-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "billingEnabled": true
+2024-03-29T16:36:21.726-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:21.726-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:21.726-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:21 [DEBUG] Retry Transport: Stopping retries, last request was successful
+2024-03-29T16:36:21.726-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:21 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:36:31.726-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:31 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:36:31.727-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:31 [INFO] Instantiating Google Cloud ResourceManager client for path https://cloudresourcemanager.googleapis.com/
+2024-03-29T16:36:31.727-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:31 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:36:31.727-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:31 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:36:31.728-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:31 [DEBUG] Google API Request Details:
+2024-03-29T16:36:31.728-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:36:31.728-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: GET /v1/projects/prg-tf-state?alt=json&prettyPrint=false HTTP/1.1
+2024-03-29T16:36:31.728-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: cloudresourcemanager.googleapis.com
+2024-03-29T16:36:31.728-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:36:31.728-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:36:31.728-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:36:31.728-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:31.728-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:31.728-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:32.342-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:32 [DEBUG] Google API Response Details:
+2024-03-29T16:36:32.342-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:36:32.342-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 200 OK
+2024-03-29T16:36:32.342-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:36:32.342-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: private
+2024-03-29T16:36:32.342-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:36:32 GMT
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: ESF
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server-Timing: gfet4t7; dur=506
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Referer
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Content-Type-Options: nosniff
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Frame-Options: SAMEORIGIN
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Xss-Protection: 0
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "projectNumber": "616833066598",
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "projectId": "prg-tf-state",
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "lifecycleState": "ACTIVE",
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "Terraform State Project",
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "createTime": "2024-03-29T20:36:09.072601Z"
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:32 [DEBUG] Retry Transport: Stopping retries, last request was successful
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:32 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:32 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:32 [INFO] Instantiating Google Cloud Billing client for path https://cloudbilling.googleapis.com/
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:32 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:32 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:32 [DEBUG] Google API Request Details:
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: GET /v1/projects/prg-tf-state/billingInfo?alt=json&prettyPrint=false HTTP/1.1
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: cloudbilling.googleapis.com
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:36:32.343-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:32.344-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:32.344-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:33.448-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [DEBUG] Google API Response Details:
+2024-03-29T16:36:33.453-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:36:33.454-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 200 OK
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: private
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:36:33 GMT
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: ESF
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Referer
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Content-Type-Options: nosniff
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Frame-Options: SAMEORIGIN
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Xss-Protection: 0
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "projects/prg-tf-state/billingInfo",
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "projectId": "prg-tf-state",
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "billingAccountName": "billingAccounts/014C05-027CFB-2E6FD6",
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "billingEnabled": true
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [DEBUG] Retry Transport: Stopping retries, last request was successful
+2024-03-29T16:36:33.458-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:36:33.466-0400 [DEBUG] State storage *statemgr.Filesystem declined to persist a state snapshot
+2024-03-29T16:36:33.474-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_storage_bucket.terraform_state, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .force_destroy: planned value cty.False for a non-computed attribute
+      - .location: planned value cty.StringVal("US-EAST1") does not match config value cty.StringVal("us-east1")
+      - .storage_class: planned value cty.StringVal("STANDARD") for a non-computed attribute
+      - .versioning: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .website: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .soft_delete_policy: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-03-29T16:36:33.475-0400 [INFO]  Starting apply for google_storage_bucket.terraform_state
+2024-03-29T16:36:33.475-0400 [DEBUG] google_storage_bucket.terraform_state: applying the planned Create change
+2024-03-29T16:36:33.476-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [DEBUG] setting computed for "website" from ComputedKeys
+2024-03-29T16:36:33.476-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [DEBUG] setting computed for "terraform_labels" from ComputedKeys
+2024-03-29T16:36:33.476-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [DEBUG] setting computed for "effective_labels" from ComputedKeys
+2024-03-29T16:36:33.476-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [DEBUG] setting computed for "soft_delete_policy" from ComputedKeys
+2024-03-29T16:36:33.476-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [DEBUG] setting computed for "versioning" from ComputedKeys
+2024-03-29T16:36:33.477-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:36:33.477-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [INFO] Instantiating Google Storage client for path https://storage.googleapis.com/storage/v1/
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:33 [DEBUG] Google API Request Details:
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: POST /storage/v1/b?alt=json&prettyPrint=false&project=Terraform+State+Project HTTP/1.1
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: storage.googleapis.com
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Length: 173
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "iamConfiguration": {
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "uniformBucketLevelAccess": {
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:    "enabled": false
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   }
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  },
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "lifecycle": {
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "rule": []
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  },
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "location": "us-east1",
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "tfstate-devops-03292024",
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "storageClass": "STANDARD"
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:33.478-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:35.823-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:35 [DEBUG] Google API Response Details:
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 400 Bad Request
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Length: 184
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:36:35 GMT
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Expires: Mon, 01 Jan 1990 00:00:00 GMT
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Pragma: no-cache
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: UploadServer
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Guploader-Uploadid: ABPtcPqfZR1f41oQNJMMwZo5G0qOJOCffSeXuTm4KaDM0yo5jgpq44ay7IhYoxxK1puZr2WG6e4LLLhj
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "error": {
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "code": 400,
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "message": "Unknown project id: Terraform State Project",
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "errors": [
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:    {
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "message": "Unknown project id: Terraform State Project",
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "domain": "global",
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "reason": "invalid"
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:    }
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   ]
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  }
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:35 [DEBUG] Retry Transport: Stopping retries, last request failed with non-retryable error: googleapi: got HTTP response code 400 with body: HTTP/2.0 400 Bad Request
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Length: 184
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:36:35.824-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+2024-03-29T16:36:35.825-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:36:35.825-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:36:35 GMT
+2024-03-29T16:36:35.825-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Expires: Mon, 01 Jan 1990 00:00:00 GMT
+2024-03-29T16:36:35.825-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Pragma: no-cache
+2024-03-29T16:36:35.825-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: UploadServer
+2024-03-29T16:36:35.825-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:36:35.825-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:36:35.825-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Guploader-Uploadid: ABPtcPqfZR1f41oQNJMMwZo5G0qOJOCffSeXuTm4KaDM0yo5jgpq44ay7IhYoxxK1puZr2WG6e4LLLhj
+2024-03-29T16:36:35.825-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:36:35.825-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {"error":{"code":400,"message":"Unknown project id: Terraform State Project","errors":[{"message":"Unknown project id: Terraform State Project","domain":"global","reason":"invalid"}]}}
+2024-03-29T16:36:35.825-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:35 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:36:35.825-0400 [ERROR] provider.terraform-provider-google_v5.22.0_x5: Response contains error diagnostic: @module=sdk.proto tf_req_id=0ee112c0-5ce4-1351-a0e5-67354b57ecf1 diagnostic_detail="" diagnostic_severity=ERROR diagnostic_summary="googleapi: Error 400: Unknown project id: Terraform State Project, invalid" @caller=github.com/hashicorp/terraform-plugin-go@v0.20.0/tfprotov5/internal/diag/diagnostics.go:62 tf_proto_version=5.4 tf_rpc=ApplyResourceChange tf_provider_addr=registry.terraform.io/hashicorp/google tf_resource_type=google_storage_bucket timestamp=2024-03-29T16:36:35.825-0400
+2024-03-29T16:36:35.826-0400 [WARN]  unexpected data: registry.terraform.io/hashicorp/google:stdout="Error creating bucket tfstate-devops-03292024: googleapi: Error 400: Unknown project id: Terraform State Project, invalid"
+2024-03-29T16:36:35.835-0400 [DEBUG] State storage *statemgr.Filesystem declined to persist a state snapshot
+2024-03-29T16:36:35.835-0400 [ERROR] vertex "google_storage_bucket.terraform_state" error: googleapi: Error 400: Unknown project id: Terraform State Project, invalid
+2024-03-29T16:36:35.844-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:35 [DEBUG] [transport] [server-transport 0x14000e53d40] Closing: Server.Stop called 
+2024-03-29T16:36:35.844-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:36:35 [DEBUG] [transport] [server-transport 0x14000e53d40] loopyWriter exiting with error: transport closed by client 
+2024-03-29T16:36:35.844-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:36:35.848-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63483
+2024-03-29T16:36:35.848-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:37:04.200-0400 [INFO]  Terraform version: 1.7.5
+2024-03-29T16:37:04.200-0400 [DEBUG] using github.com/hashicorp/go-tfe v1.41.0
+2024-03-29T16:37:04.200-0400 [DEBUG] using github.com/hashicorp/hcl/v2 v2.19.1
+2024-03-29T16:37:04.200-0400 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2024-03-29T16:37:04.200-0400 [DEBUG] using github.com/zclconf/go-cty v1.14.1
+2024-03-29T16:37:04.200-0400 [INFO]  Go runtime version: go1.21.8
+2024-03-29T16:37:04.200-0400 [INFO]  CLI args: []string{"terraform", "apply", "--auto-approve"}
+2024-03-29T16:37:04.200-0400 [DEBUG] Attempting to open CLI config file: /Users/davidtessier/.terraformrc
+2024-03-29T16:37:04.200-0400 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2024-03-29T16:37:04.200-0400 [INFO]  Loading CLI configuration from /Users/davidtessier/.terraform.d/credentials.tfrc.json
+2024-03-29T16:37:04.200-0400 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2024-03-29T16:37:04.200-0400 [DEBUG] ignoring non-existing provider search directory /Users/davidtessier/.terraform.d/plugins
+2024-03-29T16:37:04.200-0400 [DEBUG] ignoring non-existing provider search directory /Users/davidtessier/Library/Application Support/io.terraform/plugins
+2024-03-29T16:37:04.200-0400 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2024-03-29T16:37:04.200-0400 [INFO]  CLI command args: []string{"apply", "--auto-approve"}
+2024-03-29T16:37:04.202-0400 [DEBUG] New state was assigned lineage "73a357ac-b2f1-bfd6-9e68-2a53493f88e3"
+2024-03-29T16:37:04.262-0400 [DEBUG] checking for provisioner in "."
+2024-03-29T16:37:04.264-0400 [DEBUG] checking for provisioner in "/opt/homebrew/bin"
+2024-03-29T16:37:04.265-0400 [INFO]  backend/local: starting Apply operation
+2024-03-29T16:37:04.265-0400 [DEBUG] backend/local: will prompt for input of unset required variables [billing_account]
+2024-03-29T16:37:04.265-0400 [DEBUG] command: asking for input: "var.billing_account"
+2024-03-29T16:37:06.299-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:37:06.299-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:37:06.315-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:37:06.327-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63824
+2024-03-29T16:37:06.327-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:06.360-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:37:06.360-0400
+2024-03-29T16:37:06.367-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin2075508 network=unix timestamp=2024-03-29T16:37:06.367-0400
+2024-03-29T16:37:06.367-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:37:06.446-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:37:06.447-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63824
+2024-03-29T16:37:06.447-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:37:06.448-0400 [DEBUG] Building and walking validate graph
+2024-03-29T16:37:06.448-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:06.448-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:06.448-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:37:06.448-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:37:06.448-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state" references: [var.billing_account]
+2024-03-29T16:37:06.448-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: [google_project.terraform_state]
+2024-03-29T16:37:06.448-0400 [DEBUG] Starting graph walk: walkValidate
+2024-03-29T16:37:06.448-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:37:06.448-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:37:06.451-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:37:06.455-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63825
+2024-03-29T16:37:06.455-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:06.479-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:37:06.479-0400
+2024-03-29T16:37:06.485-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:37:06.486-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin3645855572 network=unix timestamp=2024-03-29T16:37:06.485-0400
+2024-03-29T16:37:06.507-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:37:06.508-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63825
+2024-03-29T16:37:06.508-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:37:06.508-0400 [INFO]  backend/local: apply calling Plan
+2024-03-29T16:37:06.508-0400 [DEBUG] Building and walking plan graph for NormalMode
+2024-03-29T16:37:06.508-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:06.508-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:06.508-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state (expand)" references: [var.billing_account]
+2024-03-29T16:37:06.508-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state (expand)" references: [google_project.terraform_state (expand)]
+2024-03-29T16:37:06.508-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:37:06.508-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:37:06.508-0400 [DEBUG] Starting graph walk: walkPlan
+2024-03-29T16:37:06.508-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:37:06.508-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:37:06.511-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:37:06.514-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63826
+2024-03-29T16:37:06.514-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:06.538-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:37:06.538-0400
+2024-03-29T16:37:06.544-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:37:06.544-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin2046304042 network=unix timestamp=2024-03-29T16:37:06.544-0400
+2024-03-29T16:37:06.565-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 @module=google tf_mux_provider="*proto5server.Server" tf_req_id=4b8460e8-540d-34c0-18f9-e858f9d7e447 tf_rpc=ConfigureProvider tf_provider_addr=registry.terraform.io/hashicorp/google timestamp=2024-03-29T16:37:06.565-0400
+2024-03-29T16:37:06.565-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: @module=google tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=4b8460e8-540d-34c0-18f9-e858f9d7e447 @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 tf_rpc=ConfigureProvider timestamp=2024-03-29T16:37:06.565-0400
+2024-03-29T16:37:06.565-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 @module=google tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=4b8460e8-540d-34c0-18f9-e858f9d7e447 tf_rpc=ConfigureProvider timestamp=2024-03-29T16:37:06.565-0400
+2024-03-29T16:37:06.565-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 @module=google tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=4b8460e8-540d-34c0-18f9-e858f9d7e447 tf_rpc=ConfigureProvider timestamp=2024-03-29T16:37:06.565-0400
+2024-03-29T16:37:06.565-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:06 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:07.552-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Terraform is using this identity: david.d.tessier@gmail.com: tf_mux_provider="*proto5server.Server" tf_rpc=ConfigureProvider @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1641 @module=google tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=4b8460e8-540d-34c0-18f9-e858f9d7e447 timestamp=2024-03-29T16:37:07.552-0400
+2024-03-29T16:37:07.557-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:37:07.558-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:37:07.558-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:37:07.558-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:37:07.558-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:07.837-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [INFO] Terraform is using this identity: david.d.tessier@gmail.com
+2024-03-29T16:37:07.838-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:37:07.838-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [DEBUG] Stopping batcher "Service Usage"
+2024-03-29T16:37:07.838-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:37:07.838-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [DEBUG] Stopping batcher "IAM"
+2024-03-29T16:37:07.839-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state" references: []
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [INFO] Instantiating Google Cloud ResourceManager client for path https://cloudresourcemanager.googleapis.com/
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:07 [DEBUG] Google API Request Details:
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: GET /v1/projects/prg-tf-state?alt=json&prettyPrint=false HTTP/1.1
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: cloudresourcemanager.googleapis.com
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:07.845-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:37:08.937-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:08 [DEBUG] Google API Response Details:
+2024-03-29T16:37:08.937-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:37:08.937-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 200 OK
+2024-03-29T16:37:08.937-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:37:08.937-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: private
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:37:08 GMT
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: ESF
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server-Timing: gfet4t7; dur=492
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Referer
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Content-Type-Options: nosniff
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Frame-Options: SAMEORIGIN
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Xss-Protection: 0
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:37:08.938-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "projectNumber": "616833066598",
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "projectId": "prg-tf-state",
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "lifecycleState": "ACTIVE",
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "Terraform State Project",
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "createTime": "2024-03-29T20:36:09.072601Z"
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:08 [DEBUG] Retry Transport: Stopping retries, last request was successful
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:08 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:08 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:08 [INFO] Instantiating Google Cloud Billing client for path https://cloudbilling.googleapis.com/
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:08 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:08 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:08 [DEBUG] Google API Request Details:
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: GET /v1/projects/prg-tf-state/billingInfo?alt=json&prettyPrint=false HTTP/1.1
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: cloudbilling.googleapis.com
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:08.939-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:10 [DEBUG] Google API Response Details:
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 200 OK
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: private
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:37:10 GMT
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: ESF
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Referer
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Content-Type-Options: nosniff
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Frame-Options: SAMEORIGIN
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Xss-Protection: 0
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "projects/prg-tf-state/billingInfo",
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "projectId": "prg-tf-state",
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "billingAccountName": "billingAccounts/014C05-027CFB-2E6FD6",
+2024-03-29T16:37:10.430-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "billingEnabled": true
+2024-03-29T16:37:10.431-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:37:10.431-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:37:10.431-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:10 [DEBUG] Retry Transport: Stopping retries, last request was successful
+2024-03-29T16:37:10.431-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:10 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:37:10.432-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an unexpected new value for google_project.terraform_state during refresh.
+      - .labels: was null, but now cty.MapValEmpty(cty.String)
+2024-03-29T16:37:10.436-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_project.terraform_state, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .labels: planned value cty.MapValEmpty(cty.String) for a non-computed attribute
+      - .auto_create_network: planned value cty.True for a non-computed attribute
+2024-03-29T16:37:10.437-0400 [DEBUG] Resource instance state not found for node "google_storage_bucket.terraform_state", instance google_storage_bucket.terraform_state
+2024-03-29T16:37:10.437-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: []
+2024-03-29T16:37:10.437-0400 [DEBUG] refresh: google_storage_bucket.terraform_state: no state, so not refreshing
+2024-03-29T16:37:10.443-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_storage_bucket.terraform_state, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .force_destroy: planned value cty.False for a non-computed attribute
+      - .location: planned value cty.StringVal("US-EAST1") does not match config value cty.StringVal("us-east1")
+      - .storage_class: planned value cty.StringVal("STANDARD") for a non-computed attribute
+      - .versioning: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .website: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .soft_delete_policy: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-03-29T16:37:10.444-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:10 [DEBUG] [transport] [server-transport 0x140008a9d40] Closing: Server.Stop called 
+2024-03-29T16:37:10.444-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:10 [DEBUG] [transport] [server-transport 0x140008a9d40] loopyWriter exiting with error: transport closed by client 
+2024-03-29T16:37:10.444-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:37:10.448-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63826
+2024-03-29T16:37:10.448-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:37:10.449-0400 [DEBUG] building apply graph to check for errors
+2024-03-29T16:37:10.449-0400 [DEBUG] Resource state not found for node "google_storage_bucket.terraform_state", instance google_storage_bucket.terraform_state
+2024-03-29T16:37:10.449-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:10.449-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:10.449-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:10.449-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: [google_project.terraform_state (expand)]
+2024-03-29T16:37:10.450-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:37:10.450-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state (expand)" references: [var.billing_account]
+2024-03-29T16:37:10.450-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state (expand)" references: [google_project.terraform_state (expand)]
+2024-03-29T16:37:10.450-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:37:10.465-0400 [INFO]  backend/local: apply calling Apply
+2024-03-29T16:37:10.465-0400 [DEBUG] Building and walking apply graph for NormalMode plan
+2024-03-29T16:37:10.465-0400 [DEBUG] Resource state not found for node "google_storage_bucket.terraform_state", instance google_storage_bucket.terraform_state
+2024-03-29T16:37:10.465-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:10.465-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:10.465-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:10.465-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state (expand)" references: [var.billing_account]
+2024-03-29T16:37:10.466-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state (expand)" references: [google_project.terraform_state (expand)]
+2024-03-29T16:37:10.466-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:37:10.466-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: [google_project.terraform_state (expand)]
+2024-03-29T16:37:10.466-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:37:10.466-0400 [DEBUG] Starting graph walk: walkApply
+2024-03-29T16:37:10.466-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:37:10.466-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:37:10.470-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:37:10.474-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63850
+2024-03-29T16:37:10.474-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:10.502-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:37:10.502-0400
+2024-03-29T16:37:10.508-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:37:10.508-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin3352692589 network=unix timestamp=2024-03-29T16:37:10.508-0400
+2024-03-29T16:37:10.529-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: tf_req_id=a3aa0aae-5c3f-49fc-4643-2a8f6676a0a1 tf_rpc=ConfigureProvider @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 @module=google tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google timestamp=2024-03-29T16:37:10.529-0400
+2024-03-29T16:37:10.529-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=a3aa0aae-5c3f-49fc-4643-2a8f6676a0a1 @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 @module=google tf_rpc=ConfigureProvider timestamp=2024-03-29T16:37:10.529-0400
+2024-03-29T16:37:10.529-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: @module=google tf_rpc=ConfigureProvider @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=a3aa0aae-5c3f-49fc-4643-2a8f6676a0a1 timestamp=2024-03-29T16:37:10.529-0400
+2024-03-29T16:37:10.529-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: tf_req_id=a3aa0aae-5c3f-49fc-4643-2a8f6676a0a1 tf_rpc=ConfigureProvider @module=google tf_provider_addr=registry.terraform.io/hashicorp/google tf_mux_provider="*proto5server.Server" @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 timestamp=2024-03-29T16:37:10.529-0400
+2024-03-29T16:37:10.529-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:10 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:11.629-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Terraform is using this identity: david.d.tessier@gmail.com: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1641 tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=a3aa0aae-5c3f-49fc-4643-2a8f6676a0a1 @module=google tf_mux_provider="*proto5server.Server" tf_rpc=ConfigureProvider timestamp=2024-03-29T16:37:11.629-0400
+2024-03-29T16:37:11.632-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:11 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:37:11.632-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:11 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:37:11.633-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:11 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:37:11.633-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:11 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:37:11.633-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:11 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:12.005-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [INFO] Terraform is using this identity: david.d.tessier@gmail.com
+2024-03-29T16:37:12.006-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:37:12.006-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] Stopping batcher "Service Usage"
+2024-03-29T16:37:12.006-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:37:12.006-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] Stopping batcher "IAM"
+2024-03-29T16:37:12.017-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_storage_bucket.terraform_state, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .location: planned value cty.StringVal("US-EAST1") does not match config value cty.StringVal("us-east1")
+      - .storage_class: planned value cty.StringVal("STANDARD") for a non-computed attribute
+      - .force_destroy: planned value cty.False for a non-computed attribute
+      - .versioning: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .website: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .soft_delete_policy: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-03-29T16:37:12.017-0400 [INFO]  Starting apply for google_storage_bucket.terraform_state
+2024-03-29T16:37:12.017-0400 [DEBUG] google_storage_bucket.terraform_state: applying the planned Create change
+2024-03-29T16:37:12.018-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] setting computed for "website" from ComputedKeys
+2024-03-29T16:37:12.018-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] setting computed for "soft_delete_policy" from ComputedKeys
+2024-03-29T16:37:12.018-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] setting computed for "versioning" from ComputedKeys
+2024-03-29T16:37:12.018-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] setting computed for "effective_labels" from ComputedKeys
+2024-03-29T16:37:12.018-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] setting computed for "terraform_labels" from ComputedKeys
+2024-03-29T16:37:12.019-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:12.019-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [INFO] Instantiating Google Storage client for path https://storage.googleapis.com/storage/v1/
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:12 [DEBUG] Google API Request Details:
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: POST /storage/v1/b?alt=json&prettyPrint=false&project=Terraform+State+Project HTTP/1.1
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: storage.googleapis.com
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Length: 173
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "iamConfiguration": {
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "uniformBucketLevelAccess": {
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:    "enabled": false
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   }
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  },
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "lifecycle": {
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "rule": []
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  },
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "location": "us-east1",
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "tfstate-devops-03292024",
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "storageClass": "STANDARD"
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:12.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:37:13.047-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:13 [DEBUG] Google API Response Details:
+2024-03-29T16:37:13.047-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:37:13.047-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 400 Bad Request
+2024-03-29T16:37:13.047-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Length: 184
+2024-03-29T16:37:13.047-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:37:13.047-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:37:13 GMT
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Expires: Mon, 01 Jan 1990 00:00:00 GMT
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Pragma: no-cache
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: UploadServer
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Guploader-Uploadid: ABPtcPpKiUw0aEPMlI8BrinFUJCn5W6wcbdMm7rSZKaHdtNFEAx-L7zJnR5W-AhT8sNhDSvvaiMFg-49uQ
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "error": {
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "code": 400,
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "message": "Unknown project id: Terraform State Project",
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "errors": [
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:    {
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "message": "Unknown project id: Terraform State Project",
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "domain": "global",
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "reason": "invalid"
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:    }
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   ]
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  }
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:13 [DEBUG] Retry Transport: Stopping retries, last request failed with non-retryable error: googleapi: got HTTP response code 400 with body: HTTP/2.0 400 Bad Request
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Length: 184
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:37:13 GMT
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Expires: Mon, 01 Jan 1990 00:00:00 GMT
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Pragma: no-cache
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: UploadServer
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Guploader-Uploadid: ABPtcPpKiUw0aEPMlI8BrinFUJCn5W6wcbdMm7rSZKaHdtNFEAx-L7zJnR5W-AhT8sNhDSvvaiMFg-49uQ
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {"error":{"code":400,"message":"Unknown project id: Terraform State Project","errors":[{"message":"Unknown project id: Terraform State Project","domain":"global","reason":"invalid"}]}}
+2024-03-29T16:37:13.048-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:13 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:37:13.050-0400 [ERROR] provider.terraform-provider-google_v5.22.0_x5: Response contains error diagnostic: diagnostic_detail="" diagnostic_summary="googleapi: Error 400: Unknown project id: Terraform State Project, invalid" tf_rpc=ApplyResourceChange diagnostic_severity=ERROR tf_req_id=e544f67b-05e4-538f-71da-ac9a9696472f @caller=github.com/hashicorp/terraform-plugin-go@v0.20.0/tfprotov5/internal/diag/diagnostics.go:62 tf_proto_version=5.4 tf_resource_type=google_storage_bucket @module=sdk.proto tf_provider_addr=registry.terraform.io/hashicorp/google timestamp=2024-03-29T16:37:13.049-0400
+2024-03-29T16:37:13.050-0400 [WARN]  unexpected data: registry.terraform.io/hashicorp/google:stdout="Error creating bucket tfstate-devops-03292024: googleapi: Error 400: Unknown project id: Terraform State Project, invalid"
+2024-03-29T16:37:13.061-0400 [DEBUG] State storage *statemgr.Filesystem declined to persist a state snapshot
+2024-03-29T16:37:13.061-0400 [ERROR] vertex "google_storage_bucket.terraform_state" error: googleapi: Error 400: Unknown project id: Terraform State Project, invalid
+2024-03-29T16:37:13.071-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:13 [DEBUG] [transport] [server-transport 0x140008ca680] Closing: Server.Stop called 
+2024-03-29T16:37:13.072-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:13 [DEBUG] [transport] [server-transport 0x140008ca680] loopyWriter exiting with error: transport closed by client 
+2024-03-29T16:37:13.072-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:37:13.076-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63850
+2024-03-29T16:37:13.076-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:37:26.960-0400 [INFO]  Terraform version: 1.7.5
+2024-03-29T16:37:26.960-0400 [DEBUG] using github.com/hashicorp/go-tfe v1.41.0
+2024-03-29T16:37:26.960-0400 [DEBUG] using github.com/hashicorp/hcl/v2 v2.19.1
+2024-03-29T16:37:26.960-0400 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2024-03-29T16:37:26.960-0400 [DEBUG] using github.com/zclconf/go-cty v1.14.1
+2024-03-29T16:37:26.960-0400 [INFO]  Go runtime version: go1.21.8
+2024-03-29T16:37:26.960-0400 [INFO]  CLI args: []string{"terraform", "apply", "--auto-approve"}
+2024-03-29T16:37:26.960-0400 [DEBUG] Attempting to open CLI config file: /Users/davidtessier/.terraformrc
+2024-03-29T16:37:26.960-0400 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2024-03-29T16:37:26.960-0400 [INFO]  Loading CLI configuration from /Users/davidtessier/.terraform.d/credentials.tfrc.json
+2024-03-29T16:37:26.961-0400 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2024-03-29T16:37:26.961-0400 [DEBUG] ignoring non-existing provider search directory /Users/davidtessier/.terraform.d/plugins
+2024-03-29T16:37:26.961-0400 [DEBUG] ignoring non-existing provider search directory /Users/davidtessier/Library/Application Support/io.terraform/plugins
+2024-03-29T16:37:26.961-0400 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2024-03-29T16:37:26.961-0400 [INFO]  CLI command args: []string{"apply", "--auto-approve"}
+2024-03-29T16:37:26.962-0400 [DEBUG] New state was assigned lineage "23150270-6475-244d-3cab-4023744ab684"
+2024-03-29T16:37:27.022-0400 [DEBUG] checking for provisioner in "."
+2024-03-29T16:37:27.025-0400 [DEBUG] checking for provisioner in "/opt/homebrew/bin"
+2024-03-29T16:37:27.025-0400 [INFO]  backend/local: starting Apply operation
+2024-03-29T16:37:27.026-0400 [DEBUG] backend/local: will prompt for input of unset required variables [billing_account]
+2024-03-29T16:37:27.026-0400 [DEBUG] command: asking for input: "var.billing_account"
+2024-03-29T16:37:28.397-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:37:28.398-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:37:28.411-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:37:28.418-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63970
+2024-03-29T16:37:28.418-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:28.449-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:37:28.449-0400
+2024-03-29T16:37:28.455-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:37:28.456-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin1774524824 network=unix timestamp=2024-03-29T16:37:28.455-0400
+2024-03-29T16:37:28.535-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:37:28.536-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63970
+2024-03-29T16:37:28.536-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:37:28.536-0400 [DEBUG] Building and walking validate graph
+2024-03-29T16:37:28.536-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:28.536-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:28.536-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state" references: [var.billing_account]
+2024-03-29T16:37:28.536-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: [google_project.terraform_state]
+2024-03-29T16:37:28.536-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:37:28.536-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:37:28.536-0400 [DEBUG] Starting graph walk: walkValidate
+2024-03-29T16:37:28.537-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:37:28.537-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:37:28.539-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:37:28.543-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63971
+2024-03-29T16:37:28.543-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:28.567-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:37:28.567-0400
+2024-03-29T16:37:28.574-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:37:28.574-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin1059980024 network=unix timestamp=2024-03-29T16:37:28.574-0400
+2024-03-29T16:37:28.596-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:37:28.597-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63971
+2024-03-29T16:37:28.597-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:37:28.597-0400 [INFO]  backend/local: apply calling Plan
+2024-03-29T16:37:28.597-0400 [DEBUG] Building and walking plan graph for NormalMode
+2024-03-29T16:37:28.598-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:28.598-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:28.598-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state (expand)" references: [var.billing_account]
+2024-03-29T16:37:28.598-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state (expand)" references: [google_project.terraform_state (expand)]
+2024-03-29T16:37:28.598-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:37:28.598-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:37:28.598-0400 [DEBUG] Starting graph walk: walkPlan
+2024-03-29T16:37:28.598-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:37:28.598-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:37:28.601-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:37:28.605-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63972
+2024-03-29T16:37:28.605-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:28.629-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:37:28.628-0400
+2024-03-29T16:37:28.635-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:37:28.635-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin2992038549 network=unix timestamp=2024-03-29T16:37:28.635-0400
+2024-03-29T16:37:28.655-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: @module=google tf_req_id=370c8371-a18c-ce08-6c0e-558951922872 tf_rpc=ConfigureProvider tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 timestamp=2024-03-29T16:37:28.655-0400
+2024-03-29T16:37:28.655-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 tf_req_id=370c8371-a18c-ce08-6c0e-558951922872 tf_rpc=ConfigureProvider tf_provider_addr=registry.terraform.io/hashicorp/google @module=google tf_mux_provider="*proto5server.Server" timestamp=2024-03-29T16:37:28.655-0400
+2024-03-29T16:37:28.655-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: @module=google tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_rpc=ConfigureProvider @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 tf_req_id=370c8371-a18c-ce08-6c0e-558951922872 timestamp=2024-03-29T16:37:28.655-0400
+2024-03-29T16:37:28.655-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 tf_req_id=370c8371-a18c-ce08-6c0e-558951922872 tf_rpc=ConfigureProvider @module=google tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google timestamp=2024-03-29T16:37:28.655-0400
+2024-03-29T16:37:28.655-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:28 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:29.700-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Terraform is using this identity: david.d.tessier@gmail.com: tf_mux_provider="*proto5server.Server" tf_rpc=ConfigureProvider @module=google tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=370c8371-a18c-ce08-6c0e-558951922872 @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1641 timestamp=2024-03-29T16:37:29.700-0400
+2024-03-29T16:37:29.709-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:29 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:37:29.709-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:29 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:37:29.709-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:29 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:37:29.709-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:29 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:37:29.709-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:29 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:30.003-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [INFO] Terraform is using this identity: david.d.tessier@gmail.com
+2024-03-29T16:37:30.004-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:37:30.004-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Stopping batcher "IAM"
+2024-03-29T16:37:30.004-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:37:30.004-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Stopping batcher "Service Usage"
+2024-03-29T16:37:30.005-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state" references: []
+2024-03-29T16:37:30.010-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:30.010-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [INFO] Instantiating Google Cloud ResourceManager client for path https://cloudresourcemanager.googleapis.com/
+2024-03-29T16:37:30.010-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:37:30.010-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:37:30.010-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Google API Request Details:
+2024-03-29T16:37:30.011-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:37:30.011-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: GET /v1/projects/prg-tf-state?alt=json&prettyPrint=false HTTP/1.1
+2024-03-29T16:37:30.011-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: cloudresourcemanager.googleapis.com
+2024-03-29T16:37:30.011-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:37:30.011-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:37:30.011-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:37:30.011-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:30.011-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:30.011-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Google API Response Details:
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 200 OK
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: private
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:37:30 GMT
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: ESF
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server-Timing: gfet4t7; dur=174
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Referer
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Content-Type-Options: nosniff
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Frame-Options: SAMEORIGIN
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Xss-Protection: 0
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "projectNumber": "616833066598",
+2024-03-29T16:37:30.766-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "projectId": "prg-tf-state",
+2024-03-29T16:37:30.767-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "lifecycleState": "ACTIVE",
+2024-03-29T16:37:30.767-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "Terraform State Project",
+2024-03-29T16:37:30.767-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "createTime": "2024-03-29T20:36:09.072601Z"
+2024-03-29T16:37:30.767-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:37:30.767-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:37:30.767-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Retry Transport: Stopping retries, last request was successful
+2024-03-29T16:37:30.767-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:37:30.767-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:30.767-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [INFO] Instantiating Google Cloud Billing client for path https://cloudbilling.googleapis.com/
+2024-03-29T16:37:30.767-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:37:30.767-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:37:30.768-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:30 [DEBUG] Google API Request Details:
+2024-03-29T16:37:30.768-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:37:30.768-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: GET /v1/projects/prg-tf-state/billingInfo?alt=json&prettyPrint=false HTTP/1.1
+2024-03-29T16:37:30.768-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: cloudbilling.googleapis.com
+2024-03-29T16:37:30.768-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:37:30.768-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:37:30.768-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:37:30.768-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:30.768-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:30.768-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:31 [DEBUG] Google API Response Details:
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 200 OK
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: private
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:37:31 GMT
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: ESF
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Referer
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Content-Type-Options: nosniff
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Frame-Options: SAMEORIGIN
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Xss-Protection: 0
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "projects/prg-tf-state/billingInfo",
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "projectId": "prg-tf-state",
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "billingAccountName": "billingAccounts/014C05-027CFB-2E6FD6",
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "billingEnabled": true
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:37:31.396-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:37:31.397-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:31 [DEBUG] Retry Transport: Stopping retries, last request was successful
+2024-03-29T16:37:31.397-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:31 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:37:31.405-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_project.terraform_state, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .auto_create_network: planned value cty.True for a non-computed attribute
+      - .labels: planned value cty.MapValEmpty(cty.String) for a non-computed attribute
+2024-03-29T16:37:31.406-0400 [DEBUG] Resource instance state not found for node "google_storage_bucket.terraform_state", instance google_storage_bucket.terraform_state
+2024-03-29T16:37:31.406-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: []
+2024-03-29T16:37:31.406-0400 [DEBUG] refresh: google_storage_bucket.terraform_state: no state, so not refreshing
+2024-03-29T16:37:31.412-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_storage_bucket.terraform_state, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .force_destroy: planned value cty.False for a non-computed attribute
+      - .storage_class: planned value cty.StringVal("STANDARD") for a non-computed attribute
+      - .location: planned value cty.StringVal("US-EAST1") does not match config value cty.StringVal("us-east1")
+      - .soft_delete_policy: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .versioning: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .website: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-03-29T16:37:31.414-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:31 [DEBUG] [transport] [server-transport 0x14000f0da00] Closing: Server.Stop called 
+2024-03-29T16:37:31.414-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:31 [DEBUG] [transport] [server-transport 0x14000f0da00] loopyWriter exiting with error: transport closed by client 
+2024-03-29T16:37:31.414-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:37:31.418-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63972
+2024-03-29T16:37:31.418-0400 [DEBUG] provider: plugin exited
+2024-03-29T16:37:31.418-0400 [DEBUG] building apply graph to check for errors
+2024-03-29T16:37:31.418-0400 [DEBUG] Resource state not found for node "google_storage_bucket.terraform_state", instance google_storage_bucket.terraform_state
+2024-03-29T16:37:31.418-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:31.418-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:31.418-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:31.419-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state (expand)" references: [var.billing_account]
+2024-03-29T16:37:31.419-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state (expand)" references: [google_project.terraform_state (expand)]
+2024-03-29T16:37:31.419-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:37:31.419-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: [google_project.terraform_state (expand)]
+2024-03-29T16:37:31.419-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:37:31.431-0400 [INFO]  backend/local: apply calling Apply
+2024-03-29T16:37:31.431-0400 [DEBUG] Building and walking apply graph for NormalMode plan
+2024-03-29T16:37:31.431-0400 [DEBUG] Resource state not found for node "google_storage_bucket.terraform_state", instance google_storage_bucket.terraform_state
+2024-03-29T16:37:31.431-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:31.431-0400 [DEBUG] ProviderTransformer: "google_storage_bucket.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:31.431-0400 [DEBUG] ProviderTransformer: "google_project.terraform_state (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/google"]
+2024-03-29T16:37:31.431-0400 [DEBUG] ReferenceTransformer: "google_project.terraform_state (expand)" references: [var.billing_account]
+2024-03-29T16:37:31.431-0400 [DEBUG] ReferenceTransformer: "var.billing_account" references: []
+2024-03-29T16:37:31.431-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state" references: [google_project.terraform_state (expand)]
+2024-03-29T16:37:31.431-0400 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/google\"]" references: []
+2024-03-29T16:37:31.431-0400 [DEBUG] ReferenceTransformer: "google_storage_bucket.terraform_state (expand)" references: [google_project.terraform_state (expand)]
+2024-03-29T16:37:31.432-0400 [DEBUG] Starting graph walk: walkApply
+2024-03-29T16:37:31.432-0400 [DEBUG] created provider logger: level=debug
+2024-03-29T16:37:31.432-0400 [INFO]  provider: configuring client automatic mTLS
+2024-03-29T16:37:31.436-0400 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 args=[".terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5"]
+2024-03-29T16:37:31.446-0400 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63984
+2024-03-29T16:37:31.446-0400 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:31.474-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: configuring server automatic mTLS: timestamp=2024-03-29T16:37:31.474-0400
+2024-03-29T16:37:31.480-0400 [DEBUG] provider: using plugin: version=5
+2024-03-29T16:37:31.481-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: plugin address: network=unix address=/var/folders/vy/dx9xkxxx68d7kmbyhp27s9000000gn/T/plugin4256074120 timestamp=2024-03-29T16:37:31.480-0400
+2024-03-29T16:37:31.502-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 @module=google tf_mux_provider="*proto5server.Server" tf_req_id=3981f365-c6da-cd67-f8bc-d1da6309d079 tf_provider_addr=registry.terraform.io/hashicorp/google tf_rpc=ConfigureProvider timestamp=2024-03-29T16:37:31.501-0400
+2024-03-29T16:37:31.502-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 @module=google tf_rpc=ConfigureProvider tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=3981f365-c6da-cd67-f8bc-d1da6309d079 timestamp=2024-03-29T16:37:31.501-0400
+2024-03-29T16:37:31.502-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Authenticating using DefaultClient...: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1767 tf_rpc=ConfigureProvider @module=google tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_req_id=3981f365-c6da-cd67-f8bc-d1da6309d079 timestamp=2024-03-29T16:37:31.501-0400
+2024-03-29T16:37:31.502-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5:   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1768 @module=google tf_mux_provider="*proto5server.Server" tf_req_id=3981f365-c6da-cd67-f8bc-d1da6309d079 tf_rpc=ConfigureProvider tf_provider_addr=registry.terraform.io/hashicorp/google timestamp=2024-03-29T16:37:31.501-0400
+2024-03-29T16:37:31.502-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:31 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:32.314-0400 [INFO]  provider.terraform-provider-google_v5.22.0_x5: Terraform is using this identity: david.d.tessier@gmail.com: @caller=github.com/hashicorp/terraform-provider-google/google/fwtransport/framework_config.go:1641 @module=google tf_req_id=3981f365-c6da-cd67-f8bc-d1da6309d079 tf_mux_provider="*proto5server.Server" tf_provider_addr=registry.terraform.io/hashicorp/google tf_rpc=ConfigureProvider timestamp=2024-03-29T16:37:32.313-0400
+2024-03-29T16:37:32.317-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:37:32.317-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:37:32.317-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [INFO] Authenticating using DefaultClient...
+2024-03-29T16:37:32.317-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [INFO]   -- Scopes: [https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email]
+2024-03-29T16:37:32.317-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:32.633-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [INFO] Terraform is using this identity: david.d.tessier@gmail.com
+2024-03-29T16:37:32.635-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:37:32.635-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] Stopping batcher "Service Usage"
+2024-03-29T16:37:32.635-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] parent context canceled, cleaning up batcher batches
+2024-03-29T16:37:32.635-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] Stopping batcher "IAM"
+2024-03-29T16:37:32.646-0400 [WARN]  Provider "registry.terraform.io/hashicorp/google" produced an invalid plan for google_storage_bucket.terraform_state, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .location: planned value cty.StringVal("US-EAST1") does not match config value cty.StringVal("us-east1")
+      - .storage_class: planned value cty.StringVal("STANDARD") for a non-computed attribute
+      - .force_destroy: planned value cty.False for a non-computed attribute
+      - .soft_delete_policy: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .versioning: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+      - .website: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2024-03-29T16:37:32.646-0400 [INFO]  Starting apply for google_storage_bucket.terraform_state
+2024-03-29T16:37:32.647-0400 [DEBUG] google_storage_bucket.terraform_state: applying the planned Create change
+2024-03-29T16:37:32.648-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] setting computed for "versioning" from ComputedKeys
+2024-03-29T16:37:32.648-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] setting computed for "soft_delete_policy" from ComputedKeys
+2024-03-29T16:37:32.648-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] setting computed for "website" from ComputedKeys
+2024-03-29T16:37:32.648-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] setting computed for "effective_labels" from ComputedKeys
+2024-03-29T16:37:32.648-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] setting computed for "terraform_labels" from ComputedKeys
+2024-03-29T16:37:32.649-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] Waiting for state to become: [success]
+2024-03-29T16:37:32.649-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [INFO] Instantiating Google Storage client for path https://storage.googleapis.com/storage/v1/
+2024-03-29T16:37:32.649-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] Retry Transport: starting RoundTrip retry loop
+2024-03-29T16:37:32.649-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] Retry Transport: request attempt 0
+2024-03-29T16:37:32.649-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:32 [DEBUG] Google API Request Details:
+2024-03-29T16:37:32.649-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ REQUEST ]---------------------------------------
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: POST /storage/v1/b?alt=json&prettyPrint=false&project=projects%2Fprg-tf-state HTTP/1.1
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Host: storage.googleapis.com
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: User-Agent: google-api-go-client/0.5 Terraform/1.7.5 (+https://www.terraform.io) Terraform-Plugin-SDK/2.31.0 terraform-provider-google/5.22.0
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Length: 173
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Goog-Api-Client: gl-go/1.21.8 gdcl/0.167.0
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Accept-Encoding: gzip
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "iamConfiguration": {
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "uniformBucketLevelAccess": {
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:    "enabled": false
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   }
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  },
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "lifecycle": {
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "rule": []
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  },
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "location": "us-east1",
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "name": "tfstate-devops-03292024",
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "storageClass": "STANDARD"
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:32.650-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:37:34.019-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:34 [DEBUG] Google API Response Details:
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: ---[ RESPONSE ]--------------------------------------
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: HTTP/2.0 400 Bad Request
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Length: 180
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:37:33 GMT
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Expires: Mon, 01 Jan 1990 00:00:00 GMT
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Pragma: no-cache
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: UploadServer
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Guploader-Uploadid: ABPtcPo4gWTN5GYEfXLkt6j7I7S9yfzdkVE6W__Xat2ZiQ1-riuYj4WG_I8AvueVoSZRs3fxw6_6hqg
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  "error": {
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "code": 400,
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "message": "Unknown project id: projects/prg-tf-state",
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   "errors": [
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:    {
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "message": "Unknown project id: projects/prg-tf-state",
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "domain": "global",
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:     "reason": "invalid"
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:    }
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:   ]
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5:  }
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: }
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: -----------------------------------------------------
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:34 [DEBUG] Retry Transport: Stopping retries, last request failed with non-retryable error: googleapi: got HTTP response code 400 with body: HTTP/2.0 400 Bad Request
+2024-03-29T16:37:34.020-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Length: 180
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Content-Type: application/json; charset=UTF-8
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Date: Fri, 29 Mar 2024 20:37:33 GMT
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Expires: Mon, 01 Jan 1990 00:00:00 GMT
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Pragma: no-cache
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Server: UploadServer
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: Origin
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: Vary: X-Origin
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: X-Guploader-Uploadid: ABPtcPo4gWTN5GYEfXLkt6j7I7S9yfzdkVE6W__Xat2ZiQ1-riuYj4WG_I8AvueVoSZRs3fxw6_6hqg
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: {"error":{"code":400,"message":"Unknown project id: projects/prg-tf-state","errors":[{"message":"Unknown project id: projects/prg-tf-state","domain":"global","reason":"invalid"}]}}
+2024-03-29T16:37:34.021-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:34 [DEBUG] Retry Transport: Returning after 1 attempts
+2024-03-29T16:37:34.022-0400 [ERROR] provider.terraform-provider-google_v5.22.0_x5: Response contains error diagnostic: @caller=github.com/hashicorp/terraform-plugin-go@v0.20.0/tfprotov5/internal/diag/diagnostics.go:62 diagnostic_detail="" tf_proto_version=5.4 tf_provider_addr=registry.terraform.io/hashicorp/google tf_rpc=ApplyResourceChange diagnostic_summary="googleapi: Error 400: Unknown project id: projects/prg-tf-state, invalid" tf_req_id=c585a2dd-77e0-eecf-1ce4-a1b74c87d3f9 tf_resource_type=google_storage_bucket diagnostic_severity=ERROR @module=sdk.proto timestamp=2024-03-29T16:37:34.021-0400
+2024-03-29T16:37:34.022-0400 [WARN]  unexpected data: registry.terraform.io/hashicorp/google:stdout="Error creating bucket tfstate-devops-03292024: googleapi: Error 400: Unknown project id: projects/prg-tf-state, invalid"
+2024-03-29T16:37:34.030-0400 [DEBUG] State storage *statemgr.Filesystem declined to persist a state snapshot
+2024-03-29T16:37:34.030-0400 [ERROR] vertex "google_storage_bucket.terraform_state" error: googleapi: Error 400: Unknown project id: projects/prg-tf-state, invalid
+2024-03-29T16:37:34.038-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:34 [DEBUG] [transport] [server-transport 0x14000815380] Closing: Server.Stop called 
+2024-03-29T16:37:34.038-0400 [DEBUG] provider.terraform-provider-google_v5.22.0_x5: 2024/03/29 16:37:34 [DEBUG] [transport] [server-transport 0x14000815380] loopyWriter exiting with error: transport closed by client 
+2024-03-29T16:37:34.039-0400 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-03-29T16:37:34.042-0400 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/darwin_arm64/terraform-provider-google_v5.22.0_x5 pid=63984
+2024-03-29T16:37:34.042-0400 [DEBUG] provider: plugin exited

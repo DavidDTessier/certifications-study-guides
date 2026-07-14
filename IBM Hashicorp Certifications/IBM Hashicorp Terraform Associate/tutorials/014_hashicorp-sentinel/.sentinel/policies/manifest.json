@@ -1,0 +1,10 @@
+{
+	"records": [
+		{
+			"key": "terraform-restrict-ec2-instance",
+			"source": "./restrict-ec2-instance-type.sentinel",
+			"sourceSum": "",
+			"dest": "/Users/davidtessier/Documents/GitHub/hashicorp-certifications/Terraform Associate (003)/tutorials/014_hashicorp-sentinel/restrict-ec2-instance-type.sentinel"
+		}
+	]
+}
