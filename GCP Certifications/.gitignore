@@ -1,0 +1,4 @@
+
+*/.terraform
+*.1_x5
+terraform.tfstate

@@ -1,0 +1,60 @@
+# Create a cluster with network policy enforcement
+gcloud container clusters create test --enable-network-policy
+
+# Deploy a workload
+
+kubectl run hello-web --labels app=hello \
+  --image=us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0 --port 8080 --expose
+
+# Deploy the net sec policy
+kubectl apply -f hello-allow-from-foo.yaml
+
+
+# connect to the app=foo pod and hit the hello world end point
+kubectl run -l app=foo --image=alpine --restart=Never --rm -i -t test-1
+
+/ # wget -qO- --timeout=2 http://hello-web:8080
+
+
+Hello, world!
+Version: 1.0.0
+Hostname: hello-web-2258067535-vbx6z
+/ # exit
+
+# run from another pod ==> should be denied
+/ # kubectl run -l app=other --image=alpine --restart=Never --rm -i -t test-1
+
+/ # wget -qO- --timeout=2 http://hello-web:8080
+
+wget: download timed out
+/ # exit
+
+
+----
+
+Allow from UDP connections query internal hostnames such as hello-web or external hostnames such as www.example.com, you must allow DNS (domain name system) resolution in your egress network policies. 
+DNS traffic occurs on port 53 using TCP and UDP protocols.
+
+To enable egress network policies, deploy a NetworkPolicy controlling outbound traffic from Pods with the label app=foo while allowing traffic only to Pods with the label app=hello, as well as the DNS traffic.
+
+kubectl apply -f foo-allow-to-hello.yaml
+
+# deploy a new web app call hello-web2
+
+kubectl run hello-web-2 --labels app=hello-2 \
+  --image=us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0 --port 8080 --expose
+
+# temp run Pod with label app=foo and open a shell
+
+kubectl run -l app=foo --image=alpine --rm -i -t --restart=Never test-3
+
+/ # wget -qO- --timeout=2 http://hello-web:8080
+Hello, world!
+Version: 1.0.0
+Hostname: hello-web
+
+/ # wget -qO- --timeout=2 http://hello-web-2:8080
+
+the above timesout and cant establish a connection
+
+
